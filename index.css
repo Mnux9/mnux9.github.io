@@ -92,7 +92,7 @@ body {
     font-size: 120%;
 }
 
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 897px) {
 
     .post1{
         margin: 0 0 0.7% 0;
