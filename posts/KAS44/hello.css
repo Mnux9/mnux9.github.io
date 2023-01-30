@@ -157,6 +157,11 @@ body {
     font-size: 120%;
 }
 
+
+.picsize{
+    width: 100%
+}
+
 @media screen and (max-width: 897px) {
 
     .post1{
@@ -164,13 +169,43 @@ body {
         border: 2px solid white;
         width: 99.3%;
         float: left;
-    }    
+    }
 
     .tags{
         display: none;
     }
-    
+
     .tag{
         display: none;
     }
   }
+
+
+@media screen and (min-width: 1866px) {
+
+    .p1-txt{
+        font-size: 150%;
+    }
+
+    .name{
+        font-size: 200%;
+    }
+    .soc{
+        font-size: 200%;
+    }
+
+    .description{
+        font-size: 150%;
+    }
+
+    .title{
+        font-size: 210%;
+
+    }
+
+    .tag{
+        font-size: 150%;
+    }
+
+
+}
