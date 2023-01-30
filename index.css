@@ -109,3 +109,32 @@ body {
         display: none;
     }
   }
+
+@media screen and (min-width: 1866px) {
+
+    .p1-txt{
+        font-size: 150%;
+    }
+
+    .name{
+        font-size: 200%;
+    }
+    .soc{
+        font-size: 200%;
+    }
+
+    .description{
+        font-size: 150%;
+    }
+
+    .title{
+        font-size: 210%;
+
+    }
+
+    .tag{
+        font-size: 150%;
+    }
+
+
+}
