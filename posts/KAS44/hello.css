@@ -156,7 +156,11 @@ body {
     color: white;
     font-size: 120%;
 }
-
+.pic{
+    margin: 0 0.7% 0.7% 0.7%;
+    width: 25%;
+    float: left;
+}
 
 .picsize{
     width: 100%
