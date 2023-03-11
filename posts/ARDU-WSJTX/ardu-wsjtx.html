@@ -33,20 +33,20 @@
 
 
             <div class="text">
-                <a class="p1-txt" >I am making this post because i couldn't find any documentation about what commands does WSJT-X
-                    use to communicate with radios so i will try to provide some info about it here. I chose to document the communication between Kenwood TS-480, mainly
-                    because i found the "pc control command reference"[1] for it online. This datasheet made my work infinitely more easier as i dont own the TS-480.  
+                <a class="p1-txt" >I am making this post because I couldn't find any documentation about what commands does WSJT-X
+                    use to communicate with radios so I will try to provide some info about it here. I chose to document the communication between Kenwood TS-480, mainly
+                    because I found the "pc control command reference"[1] for it online. This datasheet made my work infinitely more easier as I dont own the TS-480.  
                     </a>
                 </a>
             </div>
 	    
             <div class="text">
                 <a class="p1-txt" >The process: <br>
-                    In WSJT-X i selected the TS-480, as the serial port i selected the port my arduino (at this point with no code on it) was connected to
+                    In WSJT-X I selected the TS-480, as the serial port I selected the port my arduino (at this point with no code on it) was connected to
                     and hooked up my logic analyzer to the TX and RX pins (I had to use external USB to UART converter because WSJTX is sometimes pulling the DTR
                     up and down causing the arduino to reset). I configured PulseView (the logic analyzer software) to decode UART communication
-                    and hit "Test CAT" in WSJT-X. There it was in PulseView i could finally see what is WSJT-X requesting. Now that i knew what WSJT-X wants
-                    i just checked the "pc control command reference"[1] where it is exactly written how the anwser should look like. Then i wrote a program for
+                    and hit "Test CAT" in WSJT-X. There it was in PulseView I could finally see what is WSJT-X requesting. Now that I knew what WSJT-X wants
+                    I just checked the "pc control command reference"[1] where it is exactly written how the anwser should look like. Then i wrote a program for
                     the arduino to respond to the WSJT-X commands.
                     </a>
                 </a>
@@ -71,7 +71,7 @@
             <div class="text">
                 <a class="p1-txt" >The arduino part:<br>
                     I made this code for the arduino to interface with WSJT-X (THX to <a class="dl" href="https://twitter.com/theverygaming">@theverygaming</a>
-                    <a class="p1-txt" >) for help with the code. The arduino uses an I2C LCD display to display the frequency and TX/RX status, lights up a LED depending on
+                    <a class="p1-txt" >) for help with the code. The arduino uses an I2C LCD display (meant to use 8x2 but for testing I used 16x2) to display the frequency and TX/RX status, lights up a LED depending on
                         the TX/RX status and thats about all. Feel free to modify the code for use in your own project. You can download my code
                         <a class="dl" href="radio_cat.ino">here.</a>
                     </a>
@@ -97,6 +97,15 @@
                 <a class="p1-txt" >Sources:<br>
                     1.<a class="dl" href="https://f5npv.wordpress.com/homebrew-ft8qrp-afp-fsk-trx/">Homebrew FT8QRP AFP/FSK TRX</a>
                     <a class="p1-txt" > by F5NPV
+                    </a>
+                    
+                    </a>
+                </a>
+            </div> 
+
+            <div class="text">
+                <a class="p1-txt" >You can contact me: smrcek.luky(at)gmail.com<br>
+
                     </a>
                     
                     </a>
