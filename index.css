@@ -30,9 +30,9 @@ body {
 }
 
 .description{
-    margin-bottom: 50%;
-    font-size: 120%;
     margin: 0 0.7% 0 0.7%;
+    font-size: 120%;
+
 }
 
 .description-bold{
@@ -49,12 +49,13 @@ body {
 
 .posts{
     margin: 0.7% 0 0 0;
+
 }
 
 
 
 .post1{
-    margin: 0 0 0.7% 0;
+    margin: 0 0.7% 0.7% 0;
     border: 2px solid white;
     width: 75%;
     float: left;
@@ -85,12 +86,18 @@ body {
     color: white;
 }
 
-
+.spaced{
+    text-align: justify;
+    text-justify: inter-word;
+}
 .p1-txt{
     font-size: 120%;
     margin: 0 0 0.7% 0%;
     text-decoration: none;
     color: white;
+    text-align: justify;
+    text-justify: inter-word;
+
 }
 
 .pic{
@@ -168,6 +175,7 @@ body {
 
 .text{
     margin: 0% 0% 1% 1% ;
+
 }
 
 .text-center{
@@ -180,8 +188,6 @@ body {
 .gradient{
     margin: 0 -0.7% 0px -0.7%;
     padding: 0 0.7% 0 0.7%
-
-    width: 100%
     position: absolute;
     background-image: linear-gradient(#ad00c7, #1b001f);
 }
@@ -214,6 +220,7 @@ body {
 
     .p1-txt{
         font-size: 150%;
+
     }
 
     .name{
