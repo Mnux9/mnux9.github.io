@@ -4,11 +4,11 @@ body {
     background-color:  	#1b001f;
     font-size: 100%;
     color: white;
-    background-image: linear-gradient(#ad00c7,#1b001f,#1b001f,#1b001f,#1b001f,#1b001f,#1b001f,#1b001f, #1b001f);
+
 }
 
 .header{
-    margin-bottom: 0.7%;
+    margin: 0 0.7% 0 0.7%;
     border-bottom: 2px solid white;  
 }
 
@@ -32,6 +32,7 @@ body {
 .description{
     margin-bottom: 50%;
     font-size: 120%;
+    margin: 0 0.7% 0 0.7%;
 }
 
 .description-bold{
@@ -174,6 +175,15 @@ body {
     margin: 0 0 1% 1%;
     text-decoration: none;
     color: white;
+}
+
+.gradient{
+    margin: 0 -0.7% 0px -0.7%;
+    padding: 0 0.7% 0 0.7%
+
+    width: 100%
+    position: absolute;
+    background-image: linear-gradient(#ad00c7, #1b001f);
 }
 
 @media screen and (max-width: 897px) {
