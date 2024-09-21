@@ -88,7 +88,7 @@ body {
 
 .p1-txt{
     font-size: 120%;
-    margin: 0 0 0 0%;
+    margin: 0 0 0.7% 0%;
     text-decoration: none;
     color: white;
 }
@@ -179,7 +179,7 @@ body {
 
 .gradient{
     margin: 0 -0.7% 0px -0.7%;
-    padding: 0 0.7% 0 0.7%;
+    padding: 0 0.7% 0 0.7%
 
     width: 100%
     position: absolute;
@@ -189,9 +189,10 @@ body {
 @media screen and (max-width: 897px) {
 
     .post1{
-        margin: 0 0 0.7% 0;
+        margin: 0 0 2% 0;
+        padding : 0 1% 0 1%;
         border: 2px solid white;
-        width: 99.3%;
+        width: 97%;
         float: left;
     }    
 
@@ -202,6 +203,11 @@ body {
     .tag{
         display: none;
     }
+
+
+
+
+
   }
 
 @media screen and (min-width: 1866px) {
@@ -219,6 +225,7 @@ body {
 
     .description{
         font-size: 150%;
+
     }
 
     .title{
