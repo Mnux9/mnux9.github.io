@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Making WSJT-X talk with arduino</title>
+	<link rel="stylesheet" type="text/css" href="../../index.css">
+	</link>
+	<link rel="shortcut icon" type="image/x-icon" href="../../ini.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+</head>
+    
+<body>
+    <!--top menu-->
+    <div class="gradient">
+        <div class="header">
+    
+          <a class="name" href="../../index.html">mnux</a>
+    
+          <a class="soc" href="https://github.com/Mnux9">GitHub</a>
+    
+        </div>
+    
+            <a class="description">Welcome to Mnux's website. This is my personal blog about stuff.</a>
+        </div>
+    <div class="posts">
+        <div class="post1">
+            <a class="title">Making WSJT-X talk with arduino</a><br>
+            <a href="title.png"><img class="pic" src="title.png" /> </a>
+
+
+
+
+            <div class="text">
+                <a class="p1-txt" >I am making this post because I couldn't find any documentation about what commands does WSJT-X
+                    use to communicate with radios so I will try to provide some info about it here. I chose to document the communication between Kenwood TS-480, mainly
+                    because I found the "pc control command reference"[1] for it online. This datasheet made my work infinitely more easier as I dont own the TS-480.  
+                    </a>
+                </a>
+            </div>
+	    
+            <div class="text">
+                <a class="p1-txt" >The process: <br>
+                    In WSJT-X I selected the TS-480, as the serial port I selected the port my arduino (at this point with no code on it) was connected to
+                    and hooked up my logic analyzer to the TX and RX pins (I had to use external USB to UART converter because WSJTX is sometimes pulling the DTR
+                    up and down causing the arduino to reset). I configured PulseView (the logic analyzer software) to decode UART communication
+                    and hit "Test CAT" in WSJT-X. And now in PulseView I could finally see what is WSJT-X requesting. Now that I knew what WSJT-X wants
+                    I just checked the "pc control command reference"[1] where it is exactly written how the anwser should look like. Then i wrote a program for
+                    the arduino to respond to the WSJT-X commands.
+                    </a>
+                </a>
+            </div>
+
+            <div class="text">
+                <a class="p1-txt" >So how does the communication between WSJT-X look like: <br>
+                    I wont go into details about what each command means and does as you can find that
+                    in the "pc command reference". To see the full sequence of communication download the full capture file <a class="dl" href="WSJTX TEST CAT.sr">here</a>.
+                    <a class="p1-txt" >And then open it in for example PulseView.</a>
+
+
+                    </a>
+                </a>
+            </div> 
+
+            <a href="WSJTX TEST CAT.png"><p class="bigfig"><img src="WSJTX TEST CAT.png" style="width: 100%"></a>PulseView showing portion of the communication between WSJT-X and a "TS-480"<br>
+            (TX is WSJT-X sending data, RX is WSJT-X receiving data)
+            </p>
+
+
+            <div class="text">
+                <a class="p1-txt" >The arduino part:<br>
+                    I made this code for the arduino to interface with WSJT-X (THX to <a class="dl" href="https://wetdry.world/@theverygaming">@theverygaming</a>
+                    <a class="p1-txt" >) for help with the code. The arduino uses an I2C LCD display (meant to use 8x2 but for testing I used 16x2) to display the frequency and TX/RX status, lights up a LED depending on
+                        the TX/RX status and thats about all. Feel free to modify the code for use in your own project. You can download my code
+                        <a class="dl" href="radio_cat.ino">here.</a>
+                    </a>
+                </a>
+            </div> 
+
+            <a href="ready.jpg"><p class="fig"><img src="ready.jpg" style="width: 100%"></a>Waiting for CAT</p>
+
+            <a href="rx.jpg"><p class="fig"><img src="rx.jpg" style="width: 100%"></a>RXing on 7,074MHz</p>
+
+            <a href="tx.jpg"><p class="fig"><img src="tx.jpg" style="width: 100%"></a>TXing on 7,074MHz</p><br>
+
+
+            <div class="text">
+                <a class="p1-txt" >References:<br>
+                    [1] <a class="dl" href="https://www.kenwood.com/i/products/info/amateur/ts_480/pdf/ts_480_pc.pdf">PC CONTROL COMMAND REFERENCE FOR THE TS-480HX/ SAT TRANSCEIVER</a>
+                    
+                    </a>
+                </a>
+            </div>
+            
+            <div class="text">
+                <a class="p1-txt" >Sources:<br>
+                    1.<a class="dl" href="https://f5npv.wordpress.com/homebrew-ft8qrp-afp-fsk-trx/">Homebrew FT8QRP AFP/FSK TRX</a>
+                    <a class="p1-txt" > by F5NPV
+                    </a>
+                    
+                    </a>
+                </a>
+            </div> 
+
+            <div class="text">
+                <a class="p1-txt" >You can contact me: mnuxmail(at)gmail.com<br>
+
+                    </a>
+                    
+                    </a>
+                </a>
+            </div> 
+
+            <div class="text">
+                <a class="p1-txt" >published 11/03/2023<br>
+
+                    </a>
+                    
+                    </a>
+                </a>
+            </div> 
+                          
+
+
+
+
+        </div>
+    </div>
+
+    <div class="tags">
+        <a class="tags-title">Tags:</a> <br>
+        <a class="tag" href="#">WSJT-X</a>
+        <a class="tag" href="#">CAT</a>
+        <a class="tag" href="#">Radio</a>
+        <a class="tag" href="#">Arduino</a>
+        <a class="tag" href="#">UART</a>
+
+
+    </div>
+
+    <div class="tags">
+        <a class="title">Silly badges :3</a> <br>
+        <img alt="Open source" class="badge" src="../../minecraft.png" />
+        <img alt="Arch" class="badge" src="../../arch.gif" />
+        <img alt="Firefox" class="badge" src="../../firefox3.gif" />
+        <img alt="Firefox" class="badge" src="../../transistor_cafe.gif" />
+        <img alt="LGBTQIA+" class="badge" src="../../pride_flag.png" />
+        <img alt="Trans rights!" class="badge" src="../../trans_flag.png" />
+        <img alt="Straight allay ROCKS!" class="badge" src="../../straight_flag.png" />
+        <img alt="bob" class="badge" src="../../bob.gif" />
+
+
+
+
+    </div>
+
+</body>
