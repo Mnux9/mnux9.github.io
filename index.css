@@ -217,7 +217,7 @@ body {
     height: 10%;
     border: 2px solid white;
     margin: 0.7% 0 0.07% 0;
-    padding: 0 0 0.1% 0.4% ;
+    padding : 0 1% 0 1%;
     white-space: nowrap;
     overflow: scroll;
 }
