@@ -9,6 +9,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta charset="UTF-8">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("#includedContent").load("quick.htm");
+    });
+    </script>
 </head>
 
 <body>
@@ -44,12 +50,9 @@
         </div>
 
 
-        <div class="tags">
-            <a class="title">Quick:</a> <br>
-            <a class="tag" href="KiCad.html">KiCad (footprints & symbols)</a> <br>
+        <div id="includedContent"></div>
 
 
-        </div>
 
 
         <div class="tags">
