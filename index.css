@@ -213,6 +213,26 @@ body {
     color: white;
 }
 
+.mtags{
+    height: 10%;
+    border: 2px solid white;
+    margin: 0.7% 0 0.07% 0;
+    padding: 0 0 0.1% 0.4% ;
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+.mtitle{
+    margin: 1% 1% 1% 0%;
+    font-weight: bold;
+    font-size: 150%;
+}
+.mtag{
+    margin: 1% 1% 1% 0%;
+    color: white;
+    font-size: 150%;
+}
+
 @media screen and (max-width: 897px) {
 
     .post1{
@@ -234,6 +254,19 @@ body {
 
 
 
+
+  }
+@media screen and (min-width: 897px) {
+    .mtags{
+        display: none;
+    }
+
+    .mtitle{
+        display: none;
+    }
+    .mtag{
+        display: none;
+    }
 
   }
 
