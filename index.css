@@ -225,12 +225,12 @@ body {
 .mtitle{
     margin: 1% 1% 1% 0%;
     font-weight: bold;
-    font-size: 150%;
+    font-size: 180%;
 }
 .mtag{
     margin: 1% 1% 1% 0%;
     color: white;
-    font-size: 150%;
+    font-size: 180%;
 }
 
 @media screen and (max-width: 897px) {
