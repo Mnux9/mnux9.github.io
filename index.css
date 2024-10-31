@@ -256,7 +256,19 @@ body {
 
 
   }
+@media screen and (min-width: 897px) {
+    .mtags{
+        display: none;
+    }
 
+    .mtitle{
+        display: none;
+    }
+    .mtag{
+        display: none;
+    }
+
+  }
 
 @media screen and (min-width: 1866px) {
 
