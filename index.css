@@ -220,6 +220,7 @@ body {
     padding : 0 1% 0 1%;
     white-space: nowrap;
     overflow: scroll;
+    margin: 0.7% 0 0 0;
 }
 
 .mtitle{
