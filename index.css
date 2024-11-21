@@ -18,6 +18,12 @@ body {
     font-weight: bold;
 }
 
+.disabled-name{
+    color: white;
+    font-size: 170%;
+    font-weight: normal;
+}
+
 .soc{
     color: #5820c0;
     float:  right;
