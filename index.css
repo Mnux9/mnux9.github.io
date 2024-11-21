@@ -13,7 +13,7 @@ body {
 }
 
 .name{
-    margin: 0 1% 0 0;
+    margin: 0 1% 0 1%;
     color: white;
     font-size: 170%;
     font-weight: bold;
