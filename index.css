@@ -233,6 +233,7 @@ body {
     margin: 1% 1% 1% 0%;
     color: white;
     font-size: 180%;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 897px) {
