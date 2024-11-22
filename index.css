@@ -76,7 +76,7 @@ body {
 
 .post1{
     margin: 0% 0 0.7% 0;
-    padding: 0.7% 0.7% 0.7% 0.7% ;
+    padding: 0.7% 0.7% 0.7% 0.7%;
     border: 3px solid rgba(204, 204, 204, 0.473);
     border-radius: 10px;
     width: 78%;
@@ -85,8 +85,9 @@ body {
 
 .post0{
     border: 3px solid rgba(204, 204, 204, 0.473);
+    padding: 0.7% 0.7% 0.7% 0.7%;
     border-radius: 10px;
-    width: 78%;
+    width: 77%;
     float: left;
 }
 
@@ -134,7 +135,7 @@ body {
 }
 
 .pic{
-    margin: 0 0.7% 0.7% 0.7%;
+    margin-right: 0.7%;
     width: 25%;
     float: left;
     border-radius: 7px;
@@ -177,15 +178,6 @@ body {
     font-size: 150%;
     text-decoration: none;
 }
-
-
-.pic{
-
-    width: 25%;
-    float: left;
-}
-
-
 .fig{
     float: left;
     font-size: 120%;
@@ -282,6 +274,7 @@ body {
 }
 
 @media screen and (max-width: 897px) {
+
     
 
     .tags{
@@ -293,10 +286,12 @@ body {
     }
 
     .pic{
-        width: 97%;
-        
+        width: 100%;
+        margin-bottom: 0.7%;
+        margin-right: 0;
+        float: left;        
     }
-
+    
 
 
 
@@ -306,7 +301,6 @@ body {
     .mtags{
         display: none;
     }
-
     .mtitle{
         display: none;
     }
@@ -314,8 +308,12 @@ body {
         display: none;
     }
     .p1-txt{
-        
         size: 150%;
+    }    
+    .post0{
+        border: 3px solid rgba(235, 0, 0, 0.473);
+        margin: 0 -10% 0 0;
+
     }
    
 
