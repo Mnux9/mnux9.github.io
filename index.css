@@ -285,10 +285,18 @@ body {
     .post1{
         margin: 0 0 2% 0;
         padding : 0 1% 0 1%;
-        border: 2px solid white;
+        border: 3px solid white;
         width: 99.3%;
         float: left;
-    }    
+    }
+    
+    .post1{
+        margin: 0 0 2% 0;
+        padding : 0 1% 0 1%;
+        border: 3px solid white;
+        width: 99.3%;
+        float: left;
+    }
 
     .tags{
         display: none;
