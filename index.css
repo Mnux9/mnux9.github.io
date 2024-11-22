@@ -312,6 +312,9 @@ body {
         font-size: 200%;
         font-weight: bold;
     }
+    .p1-txt{
+        font-size: 150%;
+    }
     .post0{
         border: 3px solid rgba(204, 204, 204, 0.473);
         
