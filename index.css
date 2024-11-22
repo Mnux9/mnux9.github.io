@@ -177,8 +177,18 @@ body {
     color: white;
     font-size: 150%;
     text-decoration: none;
-    border-bottom: 3px solid rgba(204, 204, 204, 0.473)
+    
 }
+
+.hover:tag{
+    margin: 1% 1% 1% 0%;
+    color: white;
+    font-size: 150%;
+    text-decoration: none;
+    border: 3px solid rgba(204, 204, 204, 0.473);
+    border-radius: 10px;
+}
+
 .fig{
     float: left;
     font-size: 120%;
@@ -291,6 +301,9 @@ body {
         margin-bottom: 0.7%;
         margin-right: 0;
         float: left;        
+    }
+    .name{
+        font-size: 200%;
     }
     .post0{
         border: 3px solid rgba(204, 204, 204, 0.473);
