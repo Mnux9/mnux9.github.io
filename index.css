@@ -76,6 +76,7 @@ body {
 
 .post1{
     margin: 0% 0 0.7% 0;
+    padding: 0.7% 0.7% 0.7% 0.7% ;
     border: 3px solid rgba(204, 204, 204, 0.473);
     border-radius: 10px;
     width: 78%;
@@ -281,6 +282,7 @@ body {
 }
 
 @media screen and (max-width: 897px) {
+    
 
     .tags{
         display: none;
@@ -289,8 +291,10 @@ body {
     .tag{
         display: none;
     }
+
     .pic{
-        width: 100%;
+        width: 97%;
+        
     }
 
 
