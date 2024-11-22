@@ -288,8 +288,9 @@ body {
 }
 
 @media screen and (max-width: 897px) {
-
-    
+    .description{
+        font-size: 150%;
+    }   
 
     .tags{
         display: none;
@@ -313,7 +314,7 @@ body {
         font-weight: bold;
     }
     .p1-txt{
-        font-size: 150%;
+        font-size: 160%;
     }
     .post0{
         border: 3px solid rgba(204, 204, 204, 0.473);
@@ -324,14 +325,11 @@ body {
     .post1{
         border: 3px solid rgba(204, 204, 204, 0.473);
         
-        width: 97
-    }
-    
-
-
-
+        width: 97%;
+    } 
 
   }
+
 @media screen and (min-width: 897px) {
 
     .mtags{
