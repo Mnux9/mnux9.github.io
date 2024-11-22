@@ -292,10 +292,15 @@ body {
         float: left;        
     }
     .post0{
-        border: 3px solid rgba(235, 0, 0, 0.473);
-        margin-left: 1.7%;
-        width: 100%;
+        border: 3px solid rgba(204, 204, 204, 0.473);
+        
+        width: 97%;
 
+    }
+    .post1{
+        border: 3px solid rgba(204, 204, 204, 0.473);
+        
+        width: 97
     }
     
 
