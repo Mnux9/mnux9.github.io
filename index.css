@@ -297,6 +297,9 @@ body {
     .mtag{
         display: none;
     }
+    .pic{
+    width: 90%;
+    }
 
   }
 
