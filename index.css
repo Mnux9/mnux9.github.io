@@ -280,6 +280,9 @@ body {
     .tag{
         display: none;
     }
+    .pic{
+        width: 90%;
+    }
 
 
 
@@ -297,9 +300,7 @@ body {
     .mtag{
         display: none;
     }
-    .pic{
-    width: 90%;
-    }
+   
 
   }
 
