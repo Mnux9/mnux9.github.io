@@ -283,6 +283,9 @@ body {
     font-size: 180%;
     text-decoration: none;
 }
+.mname{
+    font-size: 170%;
+}
 
 @media screen and (max-width: 897px) {
 
@@ -302,7 +305,7 @@ body {
         margin-right: 0;
         float: left;        
     }
-    .name{
+    .mname{
         font-size: 200%;
     }
     .post0{
