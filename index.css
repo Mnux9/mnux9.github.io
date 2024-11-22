@@ -180,7 +180,7 @@ body {
     
 }
 
-.hover:tag{
+.tag:hover{
     margin: 1% 1% 1% 0%;
     color: white;
     font-size: 150%;
