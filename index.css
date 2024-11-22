@@ -7,7 +7,7 @@ body {
 
 }
 #iot-body{
-    background-color:  	#1f1c00;
+    background-color:  	#00032c;
     margin: 0px 0.7% 0 0.7%;
     font-family: "Ubuntu", sans-serif;
     
@@ -223,7 +223,7 @@ body {
     margin: 0 -0.7% 0px -0.7%;
     padding: 0 0.7% 0 0.7%
     position: absolute;
-    background-image: linear-gradient(#c79f00, #1f1c00);
+    background-image: linear-gradient(#009bca, #00032c);
 }
 
 .iframe{
