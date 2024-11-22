@@ -7,7 +7,7 @@ body {
 
 }
 #iot-body{
-    background-color:  	#2b0e00;
+    background-color:  	#00032c;
     margin: 0px 0.7% 0 0.7%;
     font-family: "Ubuntu", sans-serif;
     font-size: 100%;
@@ -89,14 +89,14 @@ body {
 
     border: 3px solid rgba(204, 204, 204, 0.473);
     border-radius: 10px;
-    width: 74%;
+    width: 75%;
     float: left;
 }
 
 .post-center{
     margin: 0 0 0.7% 0;
     border: 2px solid white;
-    width: 75%;
+    width: 77%;
     text-align: center;
     float: left;
 }
@@ -168,6 +168,9 @@ body {
     float: right;
 }
 
+.badge{
+    width: 32%;
+}
 
 
 .tag{
@@ -234,7 +237,7 @@ body {
     margin: 0 -0.7% 0px -0.7%;
     padding: 0 0.7% 0 0.7%
     position: absolute;
-    background-image: linear-gradient(#ff906e, #2b0e00);
+    background-image: linear-gradient(#009bca, #00032c);
 }
 
 .iframe{
