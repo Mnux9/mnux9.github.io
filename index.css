@@ -308,6 +308,10 @@ body {
     .mname{
         font-size: 200%;
     }
+    .title{
+        font-size: 200%;
+        font-weight: bold;
+    }
     .post0{
         border: 3px solid rgba(204, 204, 204, 0.473);
         
@@ -326,6 +330,7 @@ body {
 
   }
 @media screen and (min-width: 897px) {
+
     .mtags{
         display: none;
     }
