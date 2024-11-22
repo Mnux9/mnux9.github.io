@@ -6,6 +6,10 @@ body {
     color: white;
 
 }
+#iot{
+
+
+}
 
 .header{
     margin: 0 0.7% 0 0.7%;
@@ -207,6 +211,13 @@ body {
     padding: 0 0.7% 0 0.7%
     position: absolute;
     background-image: linear-gradient(#ad00c7, #1b001f);
+}
+
+.iot-gradient{
+    margin: 0 -0.7% 0px -0.7%;
+    padding: 0 0.7% 0 0.7%
+    position: absolute;
+    background-image: linear-gradient(#c79f00, #1b001f);
 }
 
 .iframe{
