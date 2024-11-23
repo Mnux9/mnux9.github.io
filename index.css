@@ -373,7 +373,24 @@ body {
     
    
 
-  }
+}
+
+@media screen and (min-width: 1024px) {
+    .post0{
+        border: 3px solid rgba(204, 204, 204, 0.473);
+        
+        width: 76%;
+
+    }
+    .post1{
+        border: 3px solid rgba(204, 204, 204, 0.473);
+        
+        width: 76%;
+    } 
+    
+   
+
+}
 
 @media screen and (min-width: 1866px) {
 
