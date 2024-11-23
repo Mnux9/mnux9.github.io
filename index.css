@@ -132,14 +132,25 @@ body {
     text-align: justify;
     text-justify: inter-word;
 }
+
 .p1-txt{
-    
+    line-height: 0.1%;
     font-size: 120%;
-    float:right
+    
 
     text-decoration: none;
     color: white;
 
+}
+.p1-txt-bold{
+    margin-top: 0.7%;
+    margin-bottom: -0.7%;
+    
+    font-size: 120%;
+    font-weight: bold;
+
+    text-decoration: none;
+    color: white;
 }
 
 .pic{
