@@ -127,7 +127,9 @@ body {
     text-justify: inter-word;
 }
 .p1-txt{
+    
     font-size: 120%;
+    float:right
 
     text-decoration: none;
     color: white;
@@ -187,7 +189,7 @@ body {
     text-decoration: none;
     border: 0px solid rgba(204, 204, 204, 0.473);
     background-color: rgba(204, 204, 204, 0.473);
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .fig{
