@@ -357,6 +357,10 @@ body {
         
         width: 97%;
     } 
+    .description-bold{
+        font-size: 150%;
+        font-weight: bold;
+    }
 
   }
 
