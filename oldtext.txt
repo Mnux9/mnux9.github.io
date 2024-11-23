@@ -1,0 +1,5 @@
+This is an ESP8266 IOT board capable of controlling
+                    a whole bunch switches, lights, sensors (like: tempature, presence ,doors, etc.). I designed it to be very
+                    flexible and capable of a wide variety of applications. I have implemented an onboard switch to be able
+                    to toggle sensors only when they are needed, this is very nice for low power applications (like: outdoor
+                    weather station, mailbox sensor, etc.).
