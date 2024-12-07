@@ -320,6 +320,14 @@ body {
     border-bottom: 3px solid rgba(204, 204, 204, 0.473);
 }
 
+details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+
 @media screen and (max-width: 897px) {
     .ar-title{
         font-size: 220%;
