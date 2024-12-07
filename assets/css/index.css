@@ -162,6 +162,7 @@ body {
 
 .pic{
     margin-right: 0.7%;
+    margin-bottom: 0.7%;
     width: 25%;
     float: left;
     border-radius: 7px;
@@ -314,7 +315,17 @@ body {
     font-size: 170%;
 }
 
+
+.iot-ar{
+    border-bottom: 3px solid rgba(204, 204, 204, 0.473);
+}
+
 @media screen and (max-width: 897px) {
+    .ar-title{
+        font-size: 220%;
+
+    }
+
     .description{
         font-size: 150%;
     }   
