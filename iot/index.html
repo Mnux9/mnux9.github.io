@@ -95,6 +95,47 @@
                     </a>
                     <br>
                     </summary>
+
+                    <div style="margin-top: 2%; margin-bottom: 0%; float:left;">
+                        <a href="images/IMG_4517.jpg">
+                            <a href="images/mb-sensor-desc.jpg">
+                                <img class="pic" src="images/mb-sensor-desc.jpg" />
+                            </a>
+                            
+                        </a>
+                        <a class="p1-txt-bold">
+                            Tilt switch<br>
+                        </a>
+                        <div class="p1-txt">
+                            <a>This is a SW-520D ball tilt switch, it wakes up the ESP-8266 when the mailbox lid is open.<br></a>
+                        </div>
+                        <a class="p1-txt-bold">
+                           Temp + humidity<br>
+                        </a>
+                        <div class="p1-txt">
+                            <a>While a tempature sensor inside of a mailbox has a debatable purpose it is pretty pretty interesting
+                                to know at what tempatures are the delivery people working. (its just a 1€ part anyway)<br></a>
+                        </div>
+                        <a class="p1-txt-bold">
+                           Sensor power switch<br>
+                         </a>
+                         <div class="p1-txt">
+                             <a>This being a battery powered sensor it needs to save as much energy as possible. The mosfet power switch
+                                turns on the sensory only for the time they are needed.<br></a>
+                         </div>
+                         <a class="p1-txt-bold">
+                            Sleep fix resistor<br>
+                          </a>
+                          <div class="p1-txt">
+                              <a>For some reason my ESP8266 modules suffer from a problem called <a style="color: white;" href="https://github.com/esp8266/Arduino/issues/6007">"zoombie mode"</a>
+                              where after waking them up from deep sleep they fail to boot. Thankfully this can be fixed by running a pullup resistor from GPIO 7.
+                                <br></a>
+                          </div>
+
+
+
+                    </div>
+
                     <div style="margin-top: 2%; margin-bottom: 0%; float:left;">
                         <a href="images/IMG_4517.jpg">
                             <a href="images/bracket-desc.jpg">
