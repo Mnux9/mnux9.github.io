@@ -164,9 +164,30 @@ body {
     margin-right: 0.7%;
     margin-bottom: 0.7%;
     width: 25%;
+    
+    float: left;
+    border-radius: 7px;
+    
+}
+
+.gif{
+    margin-right: 0.7%;
+    margin-bottom: 0.7%;
+    width: 50%;
+    
     float: left;
     border-radius: 7px;
 }
+
+img.animated-gif{
+    width: 50%;
+    height: auto;
+    margin-right: 0.7%;
+    margin-bottom: 0.7%;
+    
+    float: left;
+    border-radius: 7px;
+  }
 
 .dl{
     margin: 0 0 20% 0;
