@@ -178,16 +178,6 @@ body {
     border-radius: 7px;
 }
 
-img.animated-gif{
-    width: 50%;
-    height: auto;
-    margin-right: 0.7%;
-    margin-bottom: 0.7%;
-    
-    float: left;
-    border-radius: 7px;
-  }
-
 .dl{
     margin: 0 0 20% 0;
     font-size: 120%;
@@ -277,14 +267,14 @@ img.animated-gif{
 
 .gradient{
     margin: 0 -0.7% 0px -0.7%;
-    padding: 0 0.7% 0 0.7%
+    padding: 0 0.7% 0 0.7%;
     position: absolute;
     background-image: linear-gradient(#ad00c7, #1b001f);
 }
 
 .iot-gradient{
     margin: 0 -0.7% 0px -0.7%;
-    padding: 0 0.7% 0 0.7%
+    padding: 0 0.7% 0 0.7%;
     position: absolute;
     background-image: linear-gradient(#4b6bff, #00032c);
 }
