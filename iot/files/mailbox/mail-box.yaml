@@ -1,0 +1,115 @@
+esphome:
+  name: mail-box
+  friendly_name: Mail-Box
+  name_add_mac_suffix: false
+  project:
+    name: esphome.web
+    version: dev
+  on_boot:
+    priority: 600
+    # ...
+    then:
+      - delay: 1s
+      - switch.turn_on: mailbox
+      - switch.turn_on: fet
+
+esp8266:
+  board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "YOUR-KEY"
+
+ota:
+  - platform: esphome
+    password: "ota-password"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  fast_connect: true
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Mail-Box Fallback Hotspot"
+    password: "2Iqf0772sHYw"
+
+captive_portal:
+
+
+i2c:
+  sda: 4
+  scl: 5
+  scan: True
+    
+binary_sensor:
+  - platform: gpio
+    name: "Defeat"
+    id: "defeat"
+    pin:
+      number: 2
+      mode: INPUT
+    on_press:
+      then:
+        - logger.log: "Prevent deep sleep"
+        - deep_sleep.prevent: deep_sleep_1
+
+switch:
+  - platform: gpio
+    pin: GPIO12
+    id: mailbox
+    name: "Mailbox"
+
+  - platform: gpio
+    pin: GPIO13
+    id: fet
+    name: "fet"
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+sensor:
+
+  - platform: aht10
+    variant: AHT20
+    temperature:
+      name: "Mail Box Temperature"
+    humidity:
+      name: "Mail Box Humidity"
+    update_interval: 3s
+
+
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    update_interval: 3s
+    accuracy_decimals: 1
+    filters:
+      - multiply: 1
+
+  - platform: adc
+    pin: GPIO17
+    name: "Battery"
+    accuracy_decimals: 2
+    update_interval: 1s
+    filters:
+      - multiply: 5
+      - offset: -0.3
+      
+      - sliding_window_moving_average:
+          window_size: 10
+          send_every: 10
+          send_first_at: 10
+      - throttle: 1s
+
+deep_sleep:
+  id: deep_sleep_1
+  run_duration: 10s
+
+safe_mode:
+  boot_is_good_after: 1ms
+  num_attempts: 10
