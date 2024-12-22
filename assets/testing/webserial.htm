@@ -8,15 +8,21 @@
     integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA=="
     crossorigin="anonymous"></script>
     <script src="WebSerial.js"></script>
-  <script src="sketch.js"></script>
+  
   <title>WebSerial in p5.js</title>
 </head>
 
 <body>
-  <button type="button">get variable int x from arduino</button> 
-  <button type="button">get variable int y from arduino</button> 
+  <button type="button">get variable int x from arduino</button> <a>int x = N/A</a> <br>
+  <button type="button">get variable int y from arduino</button> <a>int y = N/A</a> <br>
+  <button type="button">get variable String text from arduino</button> <a>string y = N/A</a> <br>
+
   <label for="quantity">Set int x </label>
-  <input type="number" id="quantity" name="quantity"> <button type="button">Send to arduino</button>
-  <button type="button">set X</button> 
+  <input type="number" id="quantity" name="quantity"> <button type="button">send to arduino</button> <br>
+  <label for="quantity">Set int y </label>
+  <input type="number" id="quantity" name="quantity"> <button type="button">send to arduino</button><br>
+  <label for="quantity">Set String text</label>
+  <input type="text" id="fname" name="fname"> <button type="button">send to arduino</button>
+
 </body>
 </html>
