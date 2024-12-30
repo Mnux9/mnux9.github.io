@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="webserial.js"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<title>mnux.xyz</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/index.css">
+	</link>
+	<link rel="shortcut icon" type="image/x-icon" href="../ini.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     
+    <script>
+    $(function(){
+    $("#mquick").load("mquick.htm");
+      $("#includedContent").load("iot-contents.htm");
+    });
+    </script>
+</head>
+
+<body id="iot-body">
+    <!--top menu-->
+    <div class="iot-gradient">
+    <div class="header">
+
+      <a class="mname" style="margin: 0 1% 0 1%; color: white; font-weight: bold; text-decoration: none;" href="../">mnux</a>
+      <a class="mname" style="color: white; font-weight: bold; text-decoration: none;" href="/">IOT</a>
+      <a class="soc" href="https://github.com/Mnux9">GitHub</a>
+      <a style="margin: 0 1% 0 0%; color: white; font-size: 170%; font-weight: bold; float: right; text-decoration: underline;" >en</a>
+      <a style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right;" >/</a>
+      <a style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right; text-decoration: none;" href="cs-iot.htm">cs</a>
+
+    </div>
+
+        <a class="description">Configuration tool for IoT devices.</a>
+    </div>
+
+        <div class="posts">
+            <div class="post0">
+
+
+                <div class="iot-ar" style="float:left; width: 100%; margin-top: 0.5%;">
+                    <details>
+                    <summary>
+                        <a class="ar-title" style="text-decoration: none;">Connect via USB</a><br>
+                        
+                        
+                        <div class="p1-txt">
+                            <a>choose device:</a>
+                            <button id="portButton">open port</button><br>
+                            <button id="connectButton">Connect</button>
+                            <a id="USBconnectionStatus">not connected</a>
+                            <div style="float: right;">
+                                <a>fw:</a>
+                                <span id="firmwareVersion">n/a</span>
+                                <a>sn:</a>
+                                <span id="serialNumber">n/a</span><br>
+                                
+                                
+                            </div>
+                        </div>
+                    </summary>
+                </div>
+
+
+                <div class="iot-ar" style="float:left; width: 100%;">
+                    <details>
+                    <summary>
+                        <a class="ar-title" style="text-decoration: none;">Connections</a><br>
+                        
+                            
+                        
+                        <div class="p1-txt">
+                            <a>IO16<br></a>
+                            <a style="margin-top: 4%;"> mode:</a>
+                                <select name="cars" id="cars">
+                                <option value="none">disabled</option>
+                                <option value="presence-sensor">presence sensor</option>
+                                <option value="switch">switch</option>
+                                <option value="switch">rainbow</option>
+                                </select><br>
+                        </div>
+
+                        
+
+
+                    </summary>
+                </div>
+
+
+
+                
+
+                
+            </div>
+        </div>
+
+        <div id="includedContent"></div>
+
+        <div class="tags">
+            <a class="title">badges :3</a> <br>
+            <img alt="Open source" class="badge" src="../assets/badges/minecraft.png" />
+            <img alt="Firefox" class="badge" src="../assets/badges/firefox3.gif" />
+            
+            <img alt="bob" class="badge" src="../assets/badges/bob.gif" />
+        </div>
+
+        <div class="tags">
+            <a class="title">debug:</a> <br>
+            <span id="readings">no input yet </span>
+        </div>
+        
+</body>

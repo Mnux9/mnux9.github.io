@@ -18,14 +18,17 @@ let sliderValueArduino;
 let randomValueArduino;
 let compilationDateArduino;
 
+let serialNumber;
+let fwVersion;
+
+let USBconnectionStatus;
+
 function setup() {
   // get the DOM elements and assign any listeners needed:
   // user text input:
-  const textInput = document.getElementById("txt");
-  textInput.addEventListener("keyup", readTextInput);
+
   // user range input:
-  const slider = document.getElementById("dim");
-  slider.addEventListener("change", readRangeInput);
+  
   // span for incoming serial messages:
   readingsSpan = document.getElementById("readings");
 
@@ -41,6 +44,13 @@ function setup() {
   // span for incoming serial messages:
   timeSpan = document.getElementById("seconds");
 
+  //serial number
+  serialNumber = document.getElementById("serialNumber");
+
+  fwVersion = document.getElementById("firmwareVersion");
+
+  //USB conn satus
+  USBconnectionStatus = document.getElementById("USBconnectionStatus");
   
   
   webserial = new WebSerialPort();
@@ -50,15 +60,17 @@ function setup() {
      portButton = document.getElementById("portButton");
      portButton.addEventListener("click", openClosePort);
 
-
-     onButton.addEventListener("click", ledOn);
-     connectButton.addEventListener("click", ledOn);
+     connectButton = document.getElementById("connectButton");
+     connectButton.addEventListener("click", connect);
      offButton.addEventListener("click", ledOff);
 
+     
      randomValueArduinoButton.addEventListener("click", getRandomValue);
    }
 }
 
+
+//runs after connecting to serial
 async function openClosePort() {
   // label for the button will change depending on what you do:
   let buttonLabel = "Open port";
@@ -71,6 +83,9 @@ async function openClosePort() {
   }
   // change button label:
   portButton.innerHTML = buttonLabel;
+
+  //
+  webserial.sendSerial("connect");
 }
 
 function serialRead(event) {
@@ -87,19 +102,24 @@ function serialRead(event) {
   if (event.detail.data.startsWith("random")){
     randomValueArduino.innerHTML = event.detail.data.substring(6);
   }
+
+  //gets stuff on connect
+  //gets serial number
+  if (event.detail.data.startsWith("serNr:")){
+    serialNumber.innerHTML = event.detail.data.substring(6);
+  }
+
+  if (event.detail.data.startsWith("fwVer:")){
+    fwVersion.innerHTML = event.detail.data.substring(6);
+  }
+  
+
+  if (event.detail.data.startsWith("connOK")){
+    USBconnectionStatus.innerHTML = ("Connected!");
+  }
 }
 
-function readTextInput(event) {
-  // this function is triggered with every keystroke in the input field.
-  // listen for the enter key (keyCode = 13) and skip the rest of
-  // the function if you get any other key:
-  if (event.keyCode != 13) {
-    return;
-  }
-  // if you do get an enter keyCode, send the value of the field
-  // out the serial port:
-  webserial.sendSerial(event.target.value);
-}
+
 
 function readRangeInput(event) {
   // send the range input's value out the serial port:
@@ -127,6 +147,12 @@ function getRandomValue(event) {
   // listen for the enter key (keyCode = 13) and skip the rest of
   // the function if you get any other key:
   webserial.sendSerial("random");
+}
+
+
+function connect(event) {
+
+  webserial.sendSerial("startConf;");
 }
 
 
