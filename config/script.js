@@ -23,6 +23,7 @@ let fwVersion;
 
 let USBconnectionStatus;
 
+
 function setup() {
   // get the DOM elements and assign any listeners needed:
   // user text input:
@@ -51,6 +52,9 @@ function setup() {
 
   //USB conn satus
   USBconnectionStatus = document.getElementById("USBconnectionStatus");
+
+  const setModeIO16 = document.getElementById("modeIO16");
+  setModeIO16.addEventListener("change", readRangeInput);
   
   
   webserial = new WebSerialPort();
@@ -124,7 +128,7 @@ function serialRead(event) {
 function readRangeInput(event) {
   // send the range input's value out the serial port:
   
-  webserial.sendSerial("slider"+event.target.value);
+  webserial.sendSerial("setModeIO16:"+event.target.value+";");
 }
 
 

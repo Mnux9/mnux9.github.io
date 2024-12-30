@@ -52,7 +52,6 @@ function setup() {
 
 
      onButton.addEventListener("click", ledOn);
-     connectButton.addEventListener("click", ledOn);
      offButton.addEventListener("click", ledOff);
 
      randomValueArduinoButton.addEventListener("click", getRandomValue);
