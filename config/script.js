@@ -137,6 +137,7 @@ function ledOn(event) {
   // listen for the enter key (keyCode = 13) and skip the rest of
   // the function if you get any other key:
   webserial.sendSerial("LED ON");
+  
 }
 
 function ledOff(event) {

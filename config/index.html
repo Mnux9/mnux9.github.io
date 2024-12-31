@@ -30,7 +30,7 @@
     <div class="header">
 
       <a class="mname" style="margin: 0 1% 0 1%; color: white; font-weight: bold; text-decoration: none;" href="../">mnux</a>
-      <a class="mname" style="color: white; font-weight: bold; text-decoration: none;" href="/">IOT</a>
+      <a class="mname" style="color: white; font-weight: bold; text-decoration: none;" href="../iot/">IOT</a>
       <a class="soc" href="https://github.com/Mnux9">GitHub</a>
       <a style="margin: 0 1% 0 0%; color: white; font-size: 170%; font-weight: bold; float: right; text-decoration: underline;" >en</a>
       <a style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right;" >/</a>
@@ -58,9 +58,9 @@
                             <a id="USBconnectionStatus">not connected</a>
                             <div style="float: right;">
                                 <a>fw:</a>
-                                <span id="firmwareVersion">n/a</span>
+                                <span id="firmwareVersion">-</span>
                                 <a>sn:</a>
-                                <span id="serialNumber">n/a</span><br>
+                                <span id="serialNumber">-</span><br>
                                 
                                 
                             </div>
@@ -72,10 +72,31 @@
                 <div class="iot-ar" style="float:left; width: 100%;">
                     <details>
                     <summary>
-                        <a class="ar-title" style="text-decoration: none;">Connections</a><br>
-                        
+                        <a class="ar-title" style="text-decoration: none;">WiFi settings</a>
+                        <a style="color: rgba(204, 204, 204, 0.473);">configure WiFi credentials</a><br>
+                        <div class="p1-txt">
                             
-                        
+                            <a style="margin-top: 4%;"> ssid:</a><input type="wifiSSID" id="txt" />
+                            <a style="margin-top: 4%;"> password:</a><input type="password" id="wifiPass" />
+                            <button id="WifiConnectButton">connect</button>
+                            
+                            <div style="float: right;">
+                                <a>Connection status:</a>
+                                <span id="firmwareVersion">-</span>
+                                <a>local IP:</a>
+                                <span id="serialNumber">-</span><br>
+                                
+                                
+                            </div>
+                                
+                        </div>
+                    </summary>
+                </div>
+
+                <div class="iot-ar" style="float:left; width: 100%;">
+                    <details>
+                    <summary>
+                        <a class="ar-title" style="text-decoration: none;">Connections</a><br>
                         <div class="p1-txt">
                             <a>IO16<br></a>
                             <a style="margin-top: 4%;"> mode:</a>
@@ -83,13 +104,9 @@
                                 <option value="none">disabled</option>
                                 <option value="presence-sensor">presence sensor</option>
                                 <option value="switch">switch</option>
-                                <option value="switch">rainbow</option>
+                                <option value="rainbow">rainbow</option>
                                 </select><br>
                         </div>
-
-                        
-
-
                     </summary>
                 </div>
 
