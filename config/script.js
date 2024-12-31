@@ -54,7 +54,9 @@ function setup() {
   USBconnectionStatus = document.getElementById("USBconnectionStatus");
 
   const setModeIO16 = document.getElementById("modeIO16");
-  setModeIO16.addEventListener("change", readRangeInput);
+  setModeIO16.addEventListener("change", updateModeIO16);
+
+
   
   
   webserial = new WebSerialPort();
@@ -64,12 +66,19 @@ function setup() {
      portButton = document.getElementById("portButton");
      portButton.addEventListener("click", openClosePort);
 
+     //temp connect button
      connectButton = document.getElementById("connectButton");
-     connectButton.addEventListener("click", connect);
-     offButton.addEventListener("click", ledOff);
+     connectButton.addEventListener("click", connect);  
 
-     
-     randomValueArduinoButton.addEventListener("click", getRandomValue);
+     WifiConnectButton = document.getElementById("WifiConnectButton");
+     WifiConnectButton.addEventListener("click", WifiConnect);  
+
+     saveButton = document.getElementById("saveButton");
+     saveButton.addEventListener("click", saveConfig);  
+
+     discardButton = document.getElementById("discardButton");
+     discardButton.addEventListener("click", discardConfig); 
+     //wifi connect button
    }
 }
 
@@ -125,7 +134,7 @@ function serialRead(event) {
 
 
 
-function readRangeInput(event) {
+function updateModeIO16(event) {
   // send the range input's value out the serial port:
   
   webserial.sendSerial("setModeIO16:"+event.target.value+";");
@@ -160,6 +169,20 @@ function connect(event) {
   webserial.sendSerial("startConf;");
 }
 
+function WifiConnect(event) {
+
+  webserial.sendSerial("WifiSSID:"+document.getElementById('wifiSSID').value+";");
+  webserial.sendSerial("WifiPass:"+document.getElementById('wifiPass').value+";");
+  webserial.sendSerial("WifiConnect;");
+}
+
+function saveConfig(event) {
+  webserial.sendSerial("saveConf;");
+}
+
+function discardConfig(event) {
+  webserial.sendSerial("discardConf;");
+}
 
 // run the setup function when all the page is loaded:
 document.addEventListener("DOMContentLoaded", setup);

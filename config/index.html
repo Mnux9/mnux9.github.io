@@ -76,15 +76,17 @@
                         <a style="color: rgba(204, 204, 204, 0.473);">configure WiFi credentials</a><br>
                         <div class="p1-txt">
                             
-                            <a style="margin-top: 4%;"> ssid:</a><input type="wifiSSID" id="txt" />
+                            <a style="margin-top: 4%;"> ssid:</a><input type="txt" id="wifiSSID" />
                             <a style="margin-top: 4%;"> password:</a><input type="password" id="wifiPass" />
                             <button id="WifiConnectButton">connect</button>
                             
                             <div style="float: right;">
                                 <a>Connection status:</a>
-                                <span id="firmwareVersion">-</span>
+                                <span id="wifiStatus">-</span>
                                 <a>local IP:</a>
-                                <span id="serialNumber">-</span><br>
+                                <span id="localIP">-</span>
+                                <a>RSSI:</a>
+                                <span id="firmwareVersion">-</span><br>
                                 
                                 
                             </div>
@@ -96,7 +98,8 @@
                 <div class="iot-ar" style="float:left; width: 100%;">
                     <details>
                     <summary>
-                        <a class="ar-title" style="text-decoration: none;">Connections</a><br>
+                        <a class="ar-title" style="text-decoration: none;">Connections</a>
+                        <a style="color: rgba(204, 204, 204, 0.473);">configure 3.5mm jacks</a><br>
                         <div class="p1-txt">
                             <a>IO16<br></a>
                             <a style="margin-top: 4%;"> mode:</a>
@@ -109,6 +112,8 @@
                         </div>
                     </summary>
                 </div>
+                <button id="discardButton">discard and disconnect</button>
+                <button id="saveButton">save and disconnect</button>
 
 
 

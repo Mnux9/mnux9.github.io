@@ -67,7 +67,7 @@ class WebSerialPort {
       // set port settings and open it:
       // TODO: make port settings configurable
       // from calling script:
-      await this.port.open({ baudRate: 9600 });
+      await this.port.open({ baudRate: 115200 });
       // start the listenForSerial function:
       this.serialReadPromise = this.listenForSerial();
 
