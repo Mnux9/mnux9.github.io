@@ -23,6 +23,8 @@ let fwVersion;
 
 let USBconnectionStatus;
 
+let confirmation;
+
 
 function setup() {
   // get the DOM elements and assign any listeners needed:
@@ -39,16 +41,21 @@ function setup() {
   // span for slider value:
   sliderValueArduino = document.getElementById("sliderValueArduino");
 
+  //wifiSSID = document.getElementById("wifiSSID");
+
   // span for random value:
   randomValueArduino = document.getElementById("randomValueArduino");
 
   // span for incoming serial messages:
   timeSpan = document.getElementById("seconds");
 
-  //serial number
+  //serial number from html
   serialNumber = document.getElementById("serialNumber");
 
   fwVersion = document.getElementById("firmwareVersion");
+
+  //wifiStatus field from html
+  wifiStatus = document.getElementById("wifiStatus");
 
   //USB conn satus
   USBconnectionStatus = document.getElementById("USBconnectionStatus");
@@ -98,7 +105,7 @@ async function openClosePort() {
   portButton.innerHTML = buttonLabel;
 
   //
-  webserial.sendSerial("connect");
+  webserial.sendSerial("startConf;");
 }
 
 function serialRead(event) {
@@ -119,16 +126,32 @@ function serialRead(event) {
   //gets stuff on connect
   //gets serial number
   if (event.detail.data.startsWith("serNr:")){
+    //change serial number field
     serialNumber.innerHTML = event.detail.data.substring(6);
   }
 
+
+  //listen for fimware version
   if (event.detail.data.startsWith("fwVer:")){
     fwVersion.innerHTML = event.detail.data.substring(6);
   }
-  
 
+  //listen for wifiSSID
+  if (event.detail.data.startsWith("CFGwifiSSID:")){
+    document.getElementById("wifiSSID").value = event.detail.data.substring(10);
+
+  }
+  
+  
+  //connok
   if (event.detail.data.startsWith("connOK")){
     USBconnectionStatus.innerHTML = ("Connected!");
+  }
+
+
+  // confirmation
+  if (event.detail.data.startsWith("CFM")){
+    confirmation = 1;
   }
 }
 
@@ -140,40 +163,43 @@ function updateModeIO16(event) {
   webserial.sendSerial("setModeIO16:"+event.target.value+";");
 }
 
-
-function ledOn(event) {
-  // this function is triggered with every keystroke in the input field.
-  // listen for the enter key (keyCode = 13) and skip the rest of
-  // the function if you get any other key:
-  webserial.sendSerial("LED ON");
-  
-}
-
-function ledOff(event) {
-  // this function is triggered with every keystroke in the input field.
-  // listen for the enter key (keyCode = 13) and skip the rest of
-  // the function if you get any other key:
-  webserial.sendSerial("LED OFF");
-}
-
-function getRandomValue(event) {
-  // this function is triggered with every keystroke in the input field.
-  // listen for the enter key (keyCode = 13) and skip the rest of
-  // the function if you get any other key:
-  webserial.sendSerial("random");
-}
-
-
 function connect(event) {
 
   webserial.sendSerial("startConf;");
 }
 
-function WifiConnect(event) {
+async function WifiConnect(event) {
 
-  webserial.sendSerial("WifiSSID:"+document.getElementById('wifiSSID').value+";");
-  webserial.sendSerial("WifiPass:"+document.getElementById('wifiPass').value+";");
-  webserial.sendSerial("WifiConnect;");
+  webserial.sendSerial("wifiSSID:"+document.getElementById('wifiSSID').value+";");
+
+  for (let i = 0; i < 5; i++) {//5 attempts for the device to give back confirmation about save, otherwise display error
+    await sleep(500);
+    //wifiStatus.innerHTML = ("saving SSID " + i);
+    //if it gets confirmation debug field will be set
+    if (confirmation == 1){
+      wifiStatus.innerHTML = ("SSID SAVED!");
+      confirmation == 0;
+      break;
+
+    }
+
+  }
+
+  webserial.sendSerial("wifiPWD:"+document.getElementById('wifiPass').value+";");
+
+  for (let i = 0; i < 5; i++) {//5 attempts for the device to give back confirmation about save, otherwise display error
+    await sleep(500);
+    //wifiStatus.innerHTML = ("saving SSID " + i);
+    //if it gets confirmation debug field will be set
+    if (confirmation == 1){
+      wifiStatus.innerHTML = ("Password SAVED!");
+      confirmation == 0;
+      break;
+
+    }
+
+  }
+  webserial.sendSerial("wifiConnect;");
 }
 
 function saveConfig(event) {
@@ -182,6 +208,11 @@ function saveConfig(event) {
 
 function discardConfig(event) {
   webserial.sendSerial("discardConf;");
+}
+
+// function for sleep
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // run the setup function when all the page is loaded:
