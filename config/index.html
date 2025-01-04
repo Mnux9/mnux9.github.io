@@ -81,11 +81,11 @@
                             <button id="WifiConnectButton">connect</button>
                             
                             <div style="float: right;">
-                                <a>Connection status:</a>
+                                <a>connection status:</a>
                                 <span id="wifiStatus">-</span>
-                                <a>local IP:</a>
+                                <a>&ensp;local IP:</a>
                                 <span id="localIPtxt">-</span>
-                                <a>RSSI:</a>
+                                <a>&ensp;RSSI:</a>
                                 <span id="RSSItxt">-</span><br>
                                 
                                 
@@ -103,17 +103,16 @@
                         <div class="p1-txt">
                             <a>IO16<br></a>
                             <a style="margin-top: 4%;"> mode:</a>
-                                <select name="cars" id="modeIO16">
-                                <option value="none">disabled</option>
-                                <option value="presence-sensor">presence sensor</option>
+                                <select name="modes" id="modeIO16">
+                                <option value="disabled">disabled</option>
+                                <option value="presence">presence sensor</option>
                                 <option value="switch">switch</option>
                                 <option value="rainbow">rainbow</option>
                                 </select><br>
                         </div>
                     </summary>
                 </div>
-                <button id="discardButton">discard and disconnect</button>
-                <button id="saveButton">save and disconnect</button>
+                
 
 
 
@@ -144,7 +143,7 @@
             <a class="title">debug:</a> <br>
             <span id="readings">no input yet </span><br><br>
 
-            <span id="pc-">no input yet </span>
+            <span id="ioDbgAvi">no input yet </span>
         </div>
         
 </body>
