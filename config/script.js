@@ -25,6 +25,8 @@ let USBconnectionStatus;
 
 let confirmation;
 
+let nrOfIO;
+
 
 function setup() {
   // get the DOM elements and assign any listeners needed:
@@ -54,8 +56,16 @@ function setup() {
 
   fwVersion = document.getElementById("firmwareVersion");
 
+  fwVersion = document.getElementById("firmwareVersion");
+
   //wifiStatus field from html
-  wifiStatus = document.getElementById("wifiStatus");
+  ssidBox = document.getElementById("wifiSSID");
+
+  //IP
+  localIPtxt = document.getElementById("localIPtxt");
+
+  //IP
+  RSSItxt = document.getElementById("RSSItxt");
 
   //USB conn satus
   USBconnectionStatus = document.getElementById("USBconnectionStatus");
@@ -137,15 +147,65 @@ function serialRead(event) {
   }
 
   //listen for wifiSSID
-  if (event.detail.data.startsWith("CFGwifiSSID:")){
-    document.getElementById("wifiSSID").value = event.detail.data.substring(10);
+  if (event.detail.data.startsWith("wifiSSID:")){
+    ssidBox.value = event.detail.data.substring(9);
 
   }
-  
-  
-  //connok
+
+  //listen for IP
+  if (event.detail.data.startsWith("IP:")){
+    localIPtxt.innerHTML = event.detail.data.substring(4);
+    
+
+  }
+
+  //listen for RSSI
+  if (event.detail.data.startsWith("RSSI:")){
+    RSSItxt.innerHTML = event.detail.data.substring(6);
+
+  }
+
+  //listen for wifi SSID error
+  if (event.detail.data.startsWith("errWifiSSID")){
+    document.getElementById("wifiStatus").style.color = "rgb(255, 0, 0)";
+    wifiStatus.innerHTML = ("no AP found");
+
+  }
+
+  if (event.detail.data.startsWith("errWifi")){
+    document.getElementById("wifiStatus").style.color = "rgb(255, 0, 0)";
+    wifiStatus.innerHTML = ("can't connect");
+
+  }
+
+  if (event.detail.data.startsWith("okWifiConn")){
+    document.getElementById("wifiStatus").style.color = "rgb(0, 204, 34)";
+    wifiStatus.innerHTML = ("connected");
+
+  }
+
+
+
+
+  //USB connok
   if (event.detail.data.startsWith("connOK")){
-    USBconnectionStatus.innerHTML = ("Connected!");
+    document.getElementById("USBconnectionStatus").style.color = "rgb(0, 204, 34)";
+    USBconnectionStatus.innerHTML = ("connected");
+    
+  }
+
+  //USB connok
+  if (event.detail.data.startsWith("availableIO:")){
+    document.getElementById("USBconnectionStatus").style.color = "rgb(0, 204, 34)";
+    USBconnectionStatus.innerHTML = ("connected");
+    
+    nrOfIO = 1;
+
+
+    //debugonly
+    document.getElementById("ioDbgAvi").innerHTML =(event.detail.data);
+    
+    
   }
 
 
@@ -199,6 +259,7 @@ async function WifiConnect(event) {
     }
 
   }
+  wifiStatus.innerHTML = ("connecting...");
   webserial.sendSerial("wifiConnect;");
 }
 
