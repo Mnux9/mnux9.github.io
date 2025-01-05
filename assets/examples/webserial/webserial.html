@@ -37,32 +37,26 @@
     </p>
   </section>
 
+  <h1>Arduino web browser control!</h1>
+
   <section id="controls">
-    <button id="portButton">open port</button><br>
+    Choose the arduino serial port:
+    <button id="portButton">open port</button><br><br>
     Latest raw input from the serial port:
     <span id="readings">no input yet </span><br>
-    Seconds passed:<span id="seconds">no seconds yet</span><br> <br>
 
-    Arduino code compilation date: <span id="compilationDateArduino">no input yet </span><br><br>
-
-    
-
-    Slide the slider:
-    <input type="range" id="dim" min="0" max="255" value="10" /><br/>
-    slider variable value:<span id="sliderValueArduino">no input yet </span><br><br>
-
-    Get random value from the arduino: <span id="randomValueArduino">no input yet </span><br>
-    <button id="randomValueArduinoButton">get</button> <br><br>
-
-    Type a string, then hit enter:
+    Display:
     <input type="text" id="txt" /> <br><br>
 
-    Control the onboard LED:
-    <button id="onButton">on</button> <button id="offButton">off</button><br> <br>
+    knob:<br>
+    <meter id="meter" class="meter" value="0.1"></meter><br><br>
 
-    Set different variables: <br>
-    <label for="quantity">Set String:</label> <input type="text" id="fname" name="fname"> <br>
-    <button id="varSetButton">Set</button>
+    LED:
+    <button id="onButton">on</button> <button id="offButton">off</button><br>
+
+    brightness:
+    <input type="range" id="dim" min="0" max="128" value="10" /><br/>
+
   </section>
 </body>
 

@@ -18,6 +18,7 @@ let sliderValueArduino;
 let randomValueArduino;
 let compilationDateArduino;
 
+
 let serialNumber;
 let fwVersion;
 
@@ -194,16 +195,16 @@ function serialRead(event) {
     
   }
 
-  //USB connok
+  //get aviable io
   if (event.detail.data.startsWith("availableIO:")){
-    document.getElementById("USBconnectionStatus").style.color = "rgb(0, 204, 34)";
-    USBconnectionStatus.innerHTML = ("connected");
-    
-    nrOfIO = 1;
+    //document.getElementById("USBconnectionStatus").style.color = "rgb(0, 204, 34)";
+    //USBconnectionStatus.innerHTML = ("connected");
+
+    nrOfIO = event.detail.data.substring(12);
 
 
     //debugonly
-    document.getElementById("ioDbgAvi").innerHTML =(event.detail.data);
+    document.getElementById("ioDbgAvi").innerHTML = nrOfIO;
     
     
   }

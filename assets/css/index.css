@@ -354,7 +354,7 @@ details > summary {
     margin-top: 0.7%;
     padding: 0.7% 0.7% 0.7% 0.7%;
     border: 3px solid rgba(204, 204, 204, 0.473);
-    border-radius: 8px;
+    border-radius: 5px;
     background-color: rgb(255, 255, 255);
     color: black;
     font-weight: bold;

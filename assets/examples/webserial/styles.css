@@ -6,10 +6,6 @@ body {
   background-color: rgb(36, 36, 36);
 }
 
-input {
-  position: sticky;
-  left: 250px;
-}
 
 span {
   position: sticky;
@@ -26,4 +22,10 @@ section#controls {
 
 figcaption {
   font-style: italic;
+}
+
+.meter {
+  width: 35%;
+  
+  color: black;
 }
