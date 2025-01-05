@@ -26,6 +26,6 @@ figcaption {
 
 .meter {
   width: 35%;
-  
+  height: 50px;
   color: black;
 }
