@@ -230,6 +230,7 @@ body {
     float: left;
     font-size: 120%;
     text-align: center;
+    border-radius: 10px;
     width: 30%;
     margin-left: 2.5%;
     margin-bottom: 0.5em;
