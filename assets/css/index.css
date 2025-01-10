@@ -277,7 +277,7 @@ body {
     margin: 0 -0.7% 0px -0.7%;
     padding: 0 0.7% 0 0.7%
     position: absolute;
-    background-image: linear-gradient(#4b6bff, #00032c);
+    background-image: linear-gradient(#4b6bff, #161616);
 }
 
 .iframe{
