@@ -1,7 +1,7 @@
 body {
     margin: 0px 0.7% 0 0.7%;
     font-family: "Ubuntu", sans-serif;
-    background-color:  	#1b001f;
+    background-color:  	#161616;
     font-size: 100%;
     color: white;
 
@@ -269,7 +269,7 @@ body {
     margin: 0 -0.7% 0px -0.7%;
     padding: 0 0.7% 0 0.7%
     position: absolute;
-    background-image: linear-gradient(#ad00c7, #1b001f);
+    background-image: linear-gradient(#8100c7, #161616);
 }
 
 .iot-gradient{
