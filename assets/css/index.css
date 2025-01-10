@@ -363,6 +363,8 @@ details > summary {
     float: left;
 }
 
+
+
 @media screen and (max-width: 897px) {
     .ar-title{
         font-size: 220%;

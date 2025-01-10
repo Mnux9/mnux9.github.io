@@ -76,6 +76,7 @@ body {
     float: right;
     margin: 5px;
     clear: right; 
+    
 }
 
 .post1{
@@ -359,6 +360,13 @@ details > summary {
     color: black;
     font-weight: bold;
     float: left;
+}
+
+.sub-title{
+    font-weight: bold;
+    font-size: 150%;
+    margin: 0 0 0 0%;
+    color: white;
 }
 
 @media screen and (max-width: 897px) {
