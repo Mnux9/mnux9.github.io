@@ -36,70 +36,31 @@
             <img class="pic" src="../assets/images/i2c backpack/thumb.jpg" /> </a>
             
             <div>
-                <a class="p1-txt">I really like using the very common 16x2 character LCDs with I2C backpacks for their simplicity. However, sometimes
-                    there just isn't the space or even the need to use a wide display like the 16x2.<br><br>
-                    Conveniently, these HD44780-based displays
-                    are made in a lot of different sizes. My favorite is the 8x2, sadly (at the
-                    expense of tiny I2C OLEDs), this one is often overlooked by the maker community. This means
-                    there wasn't a proper, dedicated backpack you could easily get for them.
+                <a class="p1-txt">This is an expansion board meant to connect to the Prusa mini "buddy control board". It can be controlled via simple G-code commands. (its basically the <a class="p1-txt" href="../assets/files/uBackpack I2C schematic.pdf" style="color: rgb(0, 162, 255); text-decoration: underline;">GPIO "Hackerboard" set</a> Prusa has for the newest printers but for the Prusa mini)
                 </a>
             </div>
             
-
-
             <div class="figs">
-                <a class="p1-txt"><a href="../assets/images/i2c backpack/IMG_5062.jpg"><p class="fig"><img src="../assets/images/i2c backpack/IMG_5062.jpg" style="width: 100%; margin-left: 0;"></a>8X2 char. LCD</p>
-                <a href="../assets/images/i2c backpack/IMG_5047.jpg"><p class="fig"><img src="../assets/images/i2c backpack/IMG_5047.jpg" style="width: 100%"></a>very common 16x2 char. LCD</p>
-                <a href="../assets/images/i2c backpack/shopping.webp"><p class="fig"><img src="../assets/images/i2c backpack/shopping.webp" style="width: 100%"></a>20x4 char. LCD</p><br>
-                </a>
-            </div>        
-
-            <div class="figs">
-                <a class="sub-title">What is an I2C backpack?</a><br>
-                <a class="p1-txt">An I2C backpack basically adapts the extensive parallel bus character displays use to the popular 2-wire I2C bus.
-                    This saves on a lot of wiring and precious IO pins on your microcontroller. And as a bonus, you can even share these
-                    2 wires between 127 more accessories!!!<br>
-                    Of course, nothing comes without a catch; using an I2C backpack will make the refresh rate of your display a little slower.<br>
-
-                    When it comes to the small 8x2 display, you can no longer use the extremely common I2C backpack with all its pins.
-                    in one row. I copied the entire schematic of it and just arranged the display header for the 8x2 LCD.<br> <br>
-                </a>
-            </div>
-
-
-            <div class="figs">
-                <a href="../assets/images/i2c backpack/IMG_5039.jpg"><p class="fig"><img src="../assets/images/i2c backpack/IMG_5039.jpg" style="width: 100%"></a>front side of the uBackpack<br>
-                installed on an 8x2 LCD&ensp;&ensp;</p>
-    
-                <a href="../assets/images/i2c backpack/IMG_4981.jpg"><p class="fig"><img src="../assets/images/i2c backpack/IMG_4981.jpg" style="width: 100%"></a>back side of the uBackpack</p>
-    
-                <a href="../assets/images/i2c backpack/IMG_5073.jpg"><p class="fig"><img src="../assets/images/i2c backpack/IMG_5073.jpg" style="width: 100%"></a>bare boards<br>
-            </div>
-
-
-            <div class="figs">
-                <a class="sub-title">Compatibility</a><br>
+                <a class="sub-title">Usage:</a><br>
                 <img class="pic" src="../assets/images/i2c backpack/VFD.jpg" /> </a>
                 <a class="p1-txt">While I designed this backpack for use with 8x2 displays, it will also work with any display which has this 
                     kind of 2 row connector. (shown is a really nice vacuum fluorescent display which happens to have a compatible pinout) Note: the mounting holes
                     probably wont align on different displays than is the common 8x2.
-                </a>
+                </a><br>
+                <a class="sub-title">Examples:</a><br>
+                <a>-Timelapse camera trigger</a>
+                GPIO "Hackerboard" set
             </div>
 
             <div class="figs">
-                <a class="sub-title">Revision B</a><br>
+                <a class="sub-title">available commands</a><br>
                 <img class="pic" src="../assets/images/i2c backpack/new-board-back.png" /> </a>
-                <a class="p1-txt">In this revision I fixed the IC footprint (on the first rev. I choose too narrow package for the IC meaning i had to bend its legs under the body)
-                     and added the "standard" Qwiic/stemma/uSup connector for simple use. <br>
-                     TLDR:<br>  
-                    -Added QW/ST connector<br>
-                    -Fixed IC footprint
-
+                <a class="p1-txt">Table of commands goes here
                 </a>
             </div>
 
             <div class="figs">
-                <a class="sub-title">Getting one</a><br>
+                <a class="sub-title">Pinout</a><br>
                 <img class="pic" src="../assets/images/i2c backpack/dimentions.png" /> </a>
                 <a class="p1-txt">If you also have a need for this uBackpack you can manufacture it yourself:<br>
                     
