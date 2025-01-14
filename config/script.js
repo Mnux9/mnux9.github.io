@@ -273,7 +273,7 @@ function discardConfig(event) {
 }
 
 // function for sleep
-function sleep(ms) {
+function sleep(ms) {cc
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
