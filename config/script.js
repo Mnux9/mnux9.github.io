@@ -14,9 +14,9 @@ let portButton;   // the open/close port button
 let readingsSpan; // DOM element where the incoming readings go
 let timeSpan;     // DOM element for one special reading
 let webserial;
-let sliderValueArduino;
-let randomValueArduino;
-let compilationDateArduino;
+
+let connectionStatus;
+
 
 
 let serialNumber;
@@ -28,11 +28,13 @@ let confirmation;
 
 let nrOfIO;
 
+let synth;
+
+//import { sleep } from "/util/sleep";
 
 function setup() {
   // get the DOM elements and assign any listeners needed:
   // user text input:
-
   // user range input:
   
   // span for incoming serial messages:
@@ -57,7 +59,8 @@ function setup() {
 
   fwVersion = document.getElementById("firmwareVersion");
 
-  fwVersion = document.getElementById("firmwareVersion");
+  //serial number from html
+  compilationDate = document.getElementById("compilationDate");
 
   //wifiStatus field from html
   ssidBox = document.getElementById("wifiSSID");
@@ -71,13 +74,16 @@ function setup() {
   //USB conn satus
   USBconnectionStatus = document.getElementById("USBconnectionStatus");
 
-  const setModeIO16 = document.getElementById("modeIO16");
-  setModeIO16.addEventListener("change", updateModeIO16);
+  const textInput = document.getElementById("wifiPass");
+  textInput.addEventListener("keyup", readTextInput);
+
+  const setModeIO10 = document.getElementById("modeIO10");
+  setModeIO10.addEventListener("change", updateModeIO10);
 
 
   
   
-  webserial = new WebSerialPort();
+webserial = new WebSerialPort();
   if (webserial) {
     webserial.on("data", serialRead);
      // port open/close button:
@@ -91,13 +97,13 @@ function setup() {
      WifiConnectButton = document.getElementById("WifiConnectButton");
      WifiConnectButton.addEventListener("click", WifiConnect);  
 
-     saveButton = document.getElementById("saveButton");
-     saveButton.addEventListener("click", saveConfig);  
+     resetButton = document.getElementById("resetButton");
+     resetButton.addEventListener("click", deviceReset);    
 
-     discardButton = document.getElementById("discardButton");
-     discardButton.addEventListener("click", discardConfig); 
-     //wifi connect button
+     homekitEraseButton = document.getElementById("homekitEraseButton");
+     homekitEraseButton.addEventListener("click", homekitErase);    
    }
+   
 }
 
 
@@ -115,8 +121,15 @@ async function openClosePort() {
   // change button label:
   portButton.innerHTML = buttonLabel;
 
-  //
+
+  //reset device and put it into configuration mode
+  
+  deviceReset();
+  await sleep(500);
   webserial.sendSerial("startConf;");
+
+
+  
 }
 
 function serialRead(event) {
@@ -142,9 +155,14 @@ function serialRead(event) {
   }
 
 
-  //listen for fimware version
+  //listen for firmware version
   if (event.detail.data.startsWith("fwVer:")){
     fwVersion.innerHTML = event.detail.data.substring(6);
+  }
+
+  //listen for compilation date
+  if (event.detail.data.startsWith("compDate:")){
+    compilationDate.innerHTML = event.detail.data.substring(9);
   }
 
   //listen for wifiSSID
@@ -190,8 +208,9 @@ function serialRead(event) {
 
   //USB connok
   if (event.detail.data.startsWith("connOK")){
-    document.getElementById("USBconnectionStatus").style.color = "rgb(0, 204, 34)";
+    document.getElementById("USBconnectionStatus").style.color = "rgb(0, 204, 34)"; ioDbgAvi
     USBconnectionStatus.innerHTML = ("connected");
+    connectionStatus = 1;
     
   }
 
@@ -203,12 +222,10 @@ function serialRead(event) {
     nrOfIO = event.detail.data.substring(12);
 
 
-    //debugonly
+    //debug only
     document.getElementById("ioDbgAvi").innerHTML = nrOfIO;
     
-    
   }
-
 
   // confirmation
   if (event.detail.data.startsWith("CFM")){
@@ -218,10 +235,202 @@ function serialRead(event) {
 
 
 
-function updateModeIO16(event) {
-  // send the range input's value out the serial port:
+function updateModeIO10(event) {
+  if(document.getElementById("switchSettingsDiv")){
+    document.getElementById("switchSettingsDiv").remove(); // Removes the div with the 'div-02' id
+  }
+
+  if(event.target.value == "switch"){
+    
+    //display settings for a switch accessory
+    // wipe the gray "unused" label
+    document.getElementById("unusedPlaceholder").innerHTML = "";
+
+    document.getElementById("titleIO10").style.color = "white";
+
+    const switchSettings = document.createElement("a");
+    switchSettings.setAttribute("id", "switchSettingsDiv");
+    //switchSettings.setAttribute("class", "checkBox");
+    // Append the "checkbox" node to the list:
+    document.getElementById("divIO10").appendChild(switchSettings);
+
+    //checkbox birth
+    const checkBox = document.createElement("INPUT");
+    checkBox.setAttribute("type", "checkbox");
+    checkBox.setAttribute("class", "checkBox");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(checkBox);
+
+    //checkbox description
+    const checkBoxLabel = document.createElement("a");
+    checkBoxLabel.innerText = "inverted";
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(checkBoxLabel);
+
+    // on boot description
+    const onBootLabel = document.createElement("a");
+    onBootLabel.innerText = "on start";
+    onBootLabel.setAttribute("class", "checkBox");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(onBootLabel);
+    
+    // drop down
+    const onBootDropDown = document.createElement("select");
+    onBootDropDown.innerText = "on Boot";
+    onBootDropDown.setAttribute("class", "dropDown");
+    onBootDropDown.setAttribute("id", "onBootDropDown");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(onBootDropDown); 
+
+    //create test label
+    const testLabel = document.createElement("a");
+    testLabel.innerText = "test";
+    testLabel.setAttribute("class", "");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(testLabel);
+
+    //create on button
+    const onButton = document.createElement("button");
+    onButton.innerText = "on";
+    onButton.setAttribute("class", "button");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(onButton);
+
+    //create off button
+    const offButton = document.createElement("button");
+    offButton.innerText = "off";
+    offButton.setAttribute("class", "button");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(offButton);
+    
+    //add things to dropbox
+    let elmts = ["on", "off",];
+    let select = document.getElementById("onBootDropDown");        
+
+    // this adds options to the dropbox        
+    for (let i = 0; i < elmts.length; i++) {
+      let optn = elmts[i];
+      let el = document.createElement("option");
+      el.textContent = optn;
+      el.value = optn;
+      select.appendChild(el);
+    }
+    
+    
+  }
+
+
+
+
+  if(event.target.value == "light"){
+        
+    //display settings for a switch accessory
+    // wipe the gray "unused" label
+    document.getElementById("unusedPlaceholder").innerHTML = "";
+
+    document.getElementById("titleIO10").style.color = "white";
+
+    const switchSettings = document.createElement("a");
+    switchSettings.setAttribute("id", "switchSettingsDiv");
+    //switchSettings.setAttribute("class", "checkBox");
+    // Append the "checkbox" node to the list:
+    document.getElementById("divIO10").appendChild(switchSettings);
+
+    //checkbox birth
+    const dimmableCheckBox = document.createElement("INPUT");
+    dimmableCheckBox.setAttribute("type", "checkbox");
+    dimmableCheckBox.setAttribute("class", "checkBox");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(dimmableCheckBox);
+
+    //checkbox description
+    const dimmableDescription = document.createElement("a");
+    dimmableDescription.innerText = "dimmable";
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(dimmableDescription);
+
+    //checkbox birth
+    const checkBox = document.createElement("INPUT");
+    checkBox.setAttribute("type", "checkbox");
+    checkBox.setAttribute("class", "checkBox");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(checkBox);
+
+    //checkbox description
+    const checkBoxLabel = document.createElement("a");
+    checkBoxLabel.innerText = "inverted";
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(checkBoxLabel);
+
+    // on boot description
+    const onBootLabel = document.createElement("a");
+    onBootLabel.innerText = "on start";
+    onBootLabel.setAttribute("class", "checkBox");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(onBootLabel);
+    
+    // drop down
+    const onBootDropDown = document.createElement("select");
+    onBootDropDown.innerText = "on Boot";
+    onBootDropDown.setAttribute("class", "dropDown");
+    onBootDropDown.setAttribute("id", "onBootDropDown");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(onBootDropDown); 
+
+    //create test label
+    const testLabel = document.createElement("a");
+    testLabel.innerText = "test";
+    testLabel.setAttribute("class", "");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(testLabel);
+
+    //create on button
+    const onButton = document.createElement("button");
+    onButton.innerText = "on";
+    onButton.setAttribute("class", "button");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(onButton);
+
+    //create off button
+    const offButton = document.createElement("button");
+    offButton.innerText = "off";
+    offButton.setAttribute("class", "button");
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(offButton);
+    
+    //add things to dropbox
+    let elmts = ["on", "off",];
+    let select = document.getElementById("onBootDropDown");        
+
+    // this adds options to the dropbox        
+    for (let i = 0; i < elmts.length; i++) {
+      let optn = elmts[i];
+      let el = document.createElement("option");
+      el.textContent = optn;
+      el.value = optn;
+      select.appendChild(el);
+    }
+
+    const brightnessSlider = document.createElement("input");
+    brightnessSlider.innerText = "off";
+    brightnessSlider.setAttribute("type", "range");
+    brightnessSlider.setAttribute("disabled", "");
+    brightnessSlider.setAttribute("class", "slider");
+
+    // Append the "checkbox" node to the list:
+    document.getElementById("switchSettingsDiv").appendChild(brightnessSlider);
+    
+  }
+
   
-  webserial.sendSerial("setModeIO16:"+event.target.value+";");
+
+  if(event.target.value == "disabled"){
+    document.getElementById("titleIO10").style.color = "rgba(204, 204, 204, 0.349)";
+    document.getElementById("unusedPlaceholder").innerHTML = "unused";   
+
+  }
+ 
+  //webserial.sendSerial("setModeIO16:"+event.target.value+";");
 }
 
 function connect(event) {
@@ -229,37 +438,19 @@ function connect(event) {
   webserial.sendSerial("startConf;");
 }
 
+function deviceReset(event) {
+  webserial.deviceReset();
+}
+
 async function WifiConnect(event) {
 
   webserial.sendSerial("wifiSSID:"+document.getElementById('wifiSSID').value+";");
+  webserial.sendSerial("wifiSSID:"+document.getElementById('wifiSSID').value+";");
 
-  for (let i = 0; i < 5; i++) {//5 attempts for the device to give back confirmation about save, otherwise display error
-    await sleep(500);
-    //wifiStatus.innerHTML = ("saving SSID " + i);
-    //if it gets confirmation debug field will be set
-    if (confirmation == 1){
-      wifiStatus.innerHTML = ("SSID SAVED!");
-      confirmation == 0;
-      break;
-
-    }
-
-  }
 
   webserial.sendSerial("wifiPWD:"+document.getElementById('wifiPass').value+";");
 
-  for (let i = 0; i < 5; i++) {//5 attempts for the device to give back confirmation about save, otherwise display error
-    await sleep(500);
-    //wifiStatus.innerHTML = ("saving SSID " + i);
-    //if it gets confirmation debug field will be set
-    if (confirmation == 1){
-      wifiStatus.innerHTML = ("Password SAVED!");
-      confirmation == 0;
-      break;
 
-    }
-
-  }
   wifiStatus.innerHTML = ("connecting...");
   webserial.sendSerial("wifiConnect;");
 }
@@ -272,8 +463,25 @@ function discardConfig(event) {
   webserial.sendSerial("discardConf;");
 }
 
+function homekitErase(event) {
+  webserial.sendSerial("homekitErase;");
+}
+
+
+function readTextInput(event) {
+  // this function is triggered with every keystroke in the input field.
+  // listen for the enter key (keyCode = 13) and skip the rest of
+  // the function if you get any other key:
+  if (event.keyCode != 13) {
+    return;
+  }
+  // if you do get an enter keyCode, send the value of the field
+  // out the serial port:
+  WifiConnect();
+}
+
 // function for sleep
-function sleep(ms) {cc
+function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 

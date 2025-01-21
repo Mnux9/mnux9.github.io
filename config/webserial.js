@@ -11,6 +11,9 @@
 // TODO: multiple data types
 
 // need self = this for connect/disconnect functions
+
+//
+
 let self;
 
 class WebSerialPort {
@@ -68,6 +71,9 @@ class WebSerialPort {
       // TODO: make port settings configurable
       // from calling script:
       await this.port.open({ baudRate: 115200 });
+      
+      
+      
       // start the listenForSerial function:
       this.serialReadPromise = this.listenForSerial();
 
@@ -101,6 +107,7 @@ class WebSerialPort {
       // TODO: make it possible to send as binary:
       var output = new TextEncoder().encode(data);
       // send it, then release the writer:
+
       writer.write(output).then(writer.releaseLock());
     }
   }
@@ -135,6 +142,19 @@ class WebSerialPort {
     }
   }
 
+
+  async deviceReset() {
+    //alert("Set Signals");
+    await this.port.setSignals({
+      dataTerminalReady: false,
+      requestToSend: true,
+    });
+    await sleep(250);
+    await this.port.setSignals({
+      dataTerminalReady: false,
+      requestToSend: false,
+    });
+  }
   // this event occurs every time a new serial device
   // connects via USB:
   serialConnect(event) {
@@ -144,6 +164,9 @@ class WebSerialPort {
       self.openPort(event.target);
     }
   }
+
+
+  
 
   // this event occurs every time a new serial device
   // disconnects via USB:

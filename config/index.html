@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-	<title>mnux.xyz</title>
+	<title>mnux.xyz configurator</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/index.css">
 	</link>
 	<link rel="shortcut icon" type="image/x-icon" href="../ini.ico">
@@ -71,7 +71,7 @@
                 </div>
 
 
-                <div class="iot-ar" style="float:left; width: 100%;">
+                <div class="iot-ar" style="float:left; width: 100%; margin-top: 1%;">
                     <details>
                     <summary>
                         <a class="ar-title" style="text-decoration: none;">WiFi settings</a>
@@ -97,25 +97,95 @@
                     </summary>
                 </div>
 
-                <div class="iot-ar" style="float:left; width: 100%;">
+                <div class="iot-ar" style="float:left; width: 100%; margin-top: 1%;">
                     <details>
                     <summary>
-                        <a class="ar-title" style="text-decoration: none;">Connections</a>
-                        <a style="color: rgba(204, 204, 204, 0.473);">configure 3.5mm jacks</a><br>
-                        <div class="p1-txt">
-                            <a>IO16<br></a>
+                        <a class="ar-title" style="text-decoration: none;">Wired accessories</a>
+                        <a style="color: rgba(204, 204, 204, 0.473);">configure 3.5mm jacks</a><br> 
+                        <div class="iot-separator"></div>    
+                        <div class="p1-txt" style="border-bottom: 4px;">
+                            <a style="color: rgba(204, 204, 204, 0.349);" id="titleIO10">IO10<br></a>
+                            <a style="margin-top: 4%; " > mode:</a>
+                                <select name="modes" id="modeIO10">
+                                <option value="disabled">disabled</option>
+                                <option value="light">light</option>
+                                <option value="presence">presence sensor</option>
+                                <option value="switch">switch</option>
+                                <option value="rainbow">rainbow</option>
+                                </select>
+                    
+                                <a id="divIO10">
+                                    <a id="unusedPlaceholder"style="color: rgba(204, 204, 204, 0.349);">unused</a>
+                                    <a id="switchSettingsDiv"></a>
+                                </a>
+
+                                
+                        </div>
+
+                        <div class="iot-separator"></div>
+
+                        <div class="p1-txt" style="border-bottom: 4px;">
+                            <a style="color: rgba(204, 204, 204, 0.349);">IO13<br></a>
                             <a style="margin-top: 4%;"> mode:</a>
                                 <select name="modes" id="modeIO16">
                                 <option value="disabled">disabled</option>
                                 <option value="presence">presence sensor</option>
                                 <option value="switch">switch</option>
                                 <option value="rainbow">rainbow</option>
-                                </select><br>
+                                </select>
+                                <a style="color: rgba(204, 204, 204, 0.349);">unused</a>
+
                         </div>
+
+                        <div class="iot-separator"></div>
+
+                        <div class="p1-txt" style="border-bottom: 4px;">
+                            <a style="color: rgba(204, 204, 204, 0.349);">IO12<br></a>
+                            <a style="margin-top: 4%;"> mode:</a>
+                                <select name="modes" id="modeIO16">
+                                <option value="disabled">disabled</option>
+                                <option value="presence">presence sensor</option>
+                                <option value="switch">switch</option>
+                                <option value="rainbow">rainbow</option>
+                                </select>
+                                <a style="color: rgba(204, 204, 204, 0.349);">unused</a>
+
+                        </div>
+
+                        <div class="iot-separator"></div>
+
+                        <div class="p1-txt" style="border-bottom: 4px;">
+                            <a style="color: rgba(204, 204, 204, 0.349);">IO14<br></a>
+                            <a style="margin-top: 4%;"> mode:</a>
+                                <select name="modes" id="modeIO16">
+                                <option value="disabled">disabled</option>
+                                <option value="presence">presence sensor</option>
+                                <option value="switch">switch</option>
+                                <option value="rainbow">rainbow</option>
+                                </select>
+                                <a style="color: rgba(204, 204, 204, 0.349);">unused</a>
+
+                        </div>
+                        <div class="iot-separator"></div>
+
+                        <div class="p1-txt" style="border-bottom: 4px;">
+                            <a style="color: rgba(204, 204, 204, 0.349);">IO16<br></a>
+                            <a style="margin-top: 4%;"> mode:</a>
+                                <select name="modes" id="modeIO16">
+                                <option value="disabled">disabled</option>
+                                <option value="presence">presence sensor</option>
+                                <option value="switch">switch</option>
+                                <option value="rainbow">rainbow</option>
+                                </select>
+                                <a style="color: rgba(204, 204, 204, 0.349);">unused</a>
+
+                        </div>
+                        
                     </summary>
                 </div>
+                
 
-                <div class="iot-ar" style="border-bottom: none; float:left; width: 100%;">
+                <div class="iot-ar" style="border-bottom: none; float:left; width: 100%; margin-top: 1%;">
                     <details>
                     <summary>
                         <a class="ar-title" style="text-decoration: none;">Apple homekit</a>
@@ -126,7 +196,8 @@
                                 <a>841-31-633</a>
                             </div>
 
-                            <button id="">forger</button>
+                            <button id="homekitEraseButton">erase</button>
+                            
                         </div>
 
                     </summary>
@@ -162,7 +233,12 @@
             <a class="title">debug:</a> <br>
             <span id="readings">no input yet </span><br><br>
 
-            <span id="ioDbgAvi">no input yet </span>
+            <span id="ioDbgAvi">no input yet </span><br>
+            compiled on:
+            <span id="compilationDate">no input yet </span><br>
+
+            <button id="resetButton">reset</button>
+            
         </div>
         
 </body>
