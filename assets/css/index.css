@@ -99,6 +99,24 @@ body {
     
 }
 
+.debugTerm{
+    width: 100%;
+    margin-right: 2.5%;
+    background-color: #161616;
+    border: 2px solid rgba(204, 204, 204, 0.473);
+    border-radius: 4px;
+    color: white;
+    resize: none;
+}
+
+.centered{
+  font: 1.2em sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .post1{
     margin: 0% 0 0.7% 0;
     padding: 0.3% 0.7% 0.7% 0.7%;
@@ -219,9 +237,8 @@ body {
 
 
 .tags{
-
     margin: 0 0 0.7% 0%;
-    padding: 0 0 0.1% 0.4% ;
+    padding: 0 0 0.5% 0.4% ;
     border: 3px solid rgba(204, 204, 204, 0.473);
     width: 20%;
     border-radius: 10px;
@@ -234,7 +251,7 @@ body {
 
 
 .tag{
-    margin: 1% 1% 1% 0%;
+    margin: 1% 1% 0% 0%;
     color: white;
     font-size: 150%;
     text-decoration: none;

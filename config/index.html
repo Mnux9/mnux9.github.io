@@ -115,8 +115,8 @@
                                 </select>
                     
                                 <a id="divIO10">
-                                    <a id="unusedPlaceholder"style="color: rgba(204, 204, 204, 0.349);">unused</a>
-                                    <a id="switchSettingsDiv"></a>
+    
+                                    <a id="SettingsDivIO10"></a>
                                 </a>
 
                                 
@@ -125,59 +125,75 @@
                         <div class="iot-separator"></div>
 
                         <div class="p1-txt" style="border-bottom: 4px;">
-                            <a style="color: rgba(204, 204, 204, 0.349);">IO13<br></a>
+                            <a style="color: rgba(204, 204, 204, 0.349);" id="titleIO13">IO13<br></a>
                             <a style="margin-top: 4%;"> mode:</a>
-                                <select name="modes" id="modeIO16">
+                                <select name="modes" id="modeIO13">
                                 <option value="disabled">disabled</option>
+                                <option value="light">light</option>
                                 <option value="presence">presence sensor</option>
                                 <option value="switch">switch</option>
                                 <option value="rainbow">rainbow</option>
                                 </select>
-                                <a style="color: rgba(204, 204, 204, 0.349);">unused</a>
+                                <a id="divIO13">
+                                    
+                                    <a id="SettingsDivIO13"></a>
+                                </a>
 
                         </div>
 
                         <div class="iot-separator"></div>
 
                         <div class="p1-txt" style="border-bottom: 4px;">
-                            <a style="color: rgba(204, 204, 204, 0.349);">IO12<br></a>
+                            <a style="color: rgba(204, 204, 204, 0.349);" id="titleIO12">IO12<br></a>
                             <a style="margin-top: 4%;"> mode:</a>
-                                <select name="modes" id="modeIO16">
+                                <select name="modes" id="modeIO12">
                                 <option value="disabled">disabled</option>
+                                <option value="light">light</option>
                                 <option value="presence">presence sensor</option>
                                 <option value="switch">switch</option>
                                 <option value="rainbow">rainbow</option>
                                 </select>
-                                <a style="color: rgba(204, 204, 204, 0.349);">unused</a>
+                                <a id="divIO12">
+                                    
+                                    <a id="SettingsDivIO12"></a>
+                                </a>
 
                         </div>
 
                         <div class="iot-separator"></div>
 
                         <div class="p1-txt" style="border-bottom: 4px;">
-                            <a style="color: rgba(204, 204, 204, 0.349);">IO14<br></a>
+                            <a style="color: rgba(204, 204, 204, 0.349);" id="titleIO14">IO14<br></a>
                             <a style="margin-top: 4%;"> mode:</a>
-                                <select name="modes" id="modeIO16">
+                                <select name="modes" id="modeIO14">
                                 <option value="disabled">disabled</option>
+                                <option value="light">light</option>
                                 <option value="presence">presence sensor</option>
                                 <option value="switch">switch</option>
                                 <option value="rainbow">rainbow</option>
                                 </select>
-                                <a style="color: rgba(204, 204, 204, 0.349);">unused</a>
+                                <a id="divIO14">
+                                    
+                                    <a id="SettingsDivIO14"></a>
+                                </a>
 
                         </div>
                         <div class="iot-separator"></div>
 
                         <div class="p1-txt" style="border-bottom: 4px;">
-                            <a style="color: rgba(204, 204, 204, 0.349);">IO16<br></a>
+                            <a style="color: rgba(204, 204, 204, 0.349);" id="titleIO16">IO16<br></a>
                             <a style="margin-top: 4%;"> mode:</a>
                                 <select name="modes" id="modeIO16">
                                 <option value="disabled">disabled</option>
+                                <option value="light">light</option>
                                 <option value="presence">presence sensor</option>
                                 <option value="switch">switch</option>
                                 <option value="rainbow">rainbow</option>
                                 </select>
-                                <a style="color: rgba(204, 204, 204, 0.349);">unused</a>
+                                <a id="divIO16">
+                                    
+                                    <a id="SettingsDivIO16"></a>
+                                </a>
 
                         </div>
                         
@@ -231,13 +247,15 @@
 
         <div class="tags">
             <a class="title">debug:</a> <br>
-            <span id="readings">no input yet </span><br><br>
+            <div class="centered">
+                <textarea class="debugTerm" id="readings" rows="4"></textarea><br>
+            </div>
 
             <span id="ioDbgAvi">no input yet </span><br>
             compiled on:
             <span id="compilationDate">no input yet </span><br>
 
-            <button id="resetButton">reset</button>
+            <button id="resetButton">hw reset</button>
             
         </div>
         

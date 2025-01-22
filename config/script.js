@@ -77,8 +77,22 @@ function setup() {
   const textInput = document.getElementById("wifiPass");
   textInput.addEventListener("keyup", readTextInput);
 
+
+  //listen for IO mode changes
   const setModeIO10 = document.getElementById("modeIO10");
-  setModeIO10.addEventListener("change", updateModeIO10);
+  setModeIO10.addEventListener("change", updateSettingsElements.bind(null, "IO10"));
+
+  const setModeIO13 = document.getElementById("modeIO13");
+  setModeIO13.addEventListener("change", updateSettingsElements.bind(null, "IO13"));
+
+  const setModeIO12 = document.getElementById("modeIO12");
+  setModeIO12.addEventListener("change", updateSettingsElements.bind(null, "IO12"));
+
+  const setModeIO14 = document.getElementById("modeIO14");
+  setModeIO14.addEventListener("change", updateSettingsElements.bind(null, "IO14"));
+
+  const setModeIO16 = document.getElementById("modeIO16");
+  setModeIO16.addEventListener("change", updateSettingsElements.bind(null, "IO16"));
 
 
   
@@ -133,7 +147,8 @@ async function openClosePort() {
 }
 
 function serialRead(event) {
-  readingsSpan.innerHTML = event.detail.data;
+  readingsSpan.innerHTML += event.detail.data;
+  readingsSpan.scrollTop = readingsSpan.scrollHeight 
 
   if (event.detail.data.startsWith("slider")){
     compilationDateArduino.innerHTML = event.detail.data.substring(10);
@@ -235,44 +250,55 @@ function serialRead(event) {
 
 
 
-function updateModeIO10(event) {
-  if(document.getElementById("switchSettingsDiv")){
-    document.getElementById("switchSettingsDiv").remove(); // Removes the div with the 'div-02' id
-  }
+function updateSettingsElements(IOnr, event) {
+  //console.log("updates" + this.options[this.selectedIndex].value);
 
-  if(event.target.value == "switch"){
+
+  makeSettings(document.getElementById("mode" + IOnr).value, IOnr);
+  
+ 
+  //webserial.sendSerial("setModeIO16:"+event.target.value+";");
+}
+
+
+//universal function for generating settings elements (eg. is dimmable chekbox...) (settings generator)
+function makeSettings(mode, IOnr){
+  if(document.getElementById("SettingsDiv"+IOnr)){ //checks if "SettingsDiv"+IOnr exists and if yes removes it to clear
+    document.getElementById("SettingsDiv"+IOnr).remove(); 
+  }
+  if(mode == "switch"){
     
     //display settings for a switch accessory
     // wipe the gray "unused" label
-    document.getElementById("unusedPlaceholder").innerHTML = "";
+    //document.getElementById("unusedPlaceholder").innerHTML = "";
 
-    document.getElementById("titleIO10").style.color = "white";
+    document.getElementById("title"+IOnr).style.color = "white";
 
     const switchSettings = document.createElement("a");
-    switchSettings.setAttribute("id", "switchSettingsDiv");
+    switchSettings.setAttribute("id", "SettingsDiv"+IOnr);
     //switchSettings.setAttribute("class", "checkBox");
     // Append the "checkbox" node to the list:
-    document.getElementById("divIO10").appendChild(switchSettings);
+    document.getElementById("div"+IOnr).appendChild(switchSettings);
 
     //checkbox birth
     const checkBox = document.createElement("INPUT");
     checkBox.setAttribute("type", "checkbox");
     checkBox.setAttribute("class", "checkBox");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(checkBox);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(checkBox);
 
     //checkbox description
     const checkBoxLabel = document.createElement("a");
     checkBoxLabel.innerText = "inverted";
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(checkBoxLabel);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(checkBoxLabel);
 
     // on boot description
     const onBootLabel = document.createElement("a");
     onBootLabel.innerText = "on start";
     onBootLabel.setAttribute("class", "checkBox");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(onBootLabel);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(onBootLabel);
     
     // drop down
     const onBootDropDown = document.createElement("select");
@@ -280,28 +306,28 @@ function updateModeIO10(event) {
     onBootDropDown.setAttribute("class", "dropDown");
     onBootDropDown.setAttribute("id", "onBootDropDown");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(onBootDropDown); 
+    document.getElementById("SettingsDiv"+IOnr).appendChild(onBootDropDown); 
 
     //create test label
     const testLabel = document.createElement("a");
     testLabel.innerText = "test";
     testLabel.setAttribute("class", "");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(testLabel);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(testLabel);
 
     //create on button
     const onButton = document.createElement("button");
     onButton.innerText = "on";
     onButton.setAttribute("class", "button");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(onButton);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(onButton);
 
     //create off button
     const offButton = document.createElement("button");
     offButton.innerText = "off";
     offButton.setAttribute("class", "button");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(offButton);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(offButton);
     
     //add things to dropbox
     let elmts = ["on", "off",];
@@ -322,52 +348,55 @@ function updateModeIO10(event) {
 
 
 
-  if(event.target.value == "light"){
+  if(mode == "light"){
         
     //display settings for a switch accessory
     // wipe the gray "unused" label
-    document.getElementById("unusedPlaceholder").innerHTML = "";
+    //document.getElementById("unusedPlaceholder").innerHTML = "";
 
-    document.getElementById("titleIO10").style.color = "white";
+    document.getElementById("title"+IOnr).style.color = "white";
 
     const switchSettings = document.createElement("a");
-    switchSettings.setAttribute("id", "switchSettingsDiv");
+    switchSettings.setAttribute("id", "SettingsDiv"+IOnr);
     //switchSettings.setAttribute("class", "checkBox");
     // Append the "checkbox" node to the list:
-    document.getElementById("divIO10").appendChild(switchSettings);
+    document.getElementById("div"+IOnr).appendChild(switchSettings);
 
     //checkbox birth
     const dimmableCheckBox = document.createElement("INPUT");
     dimmableCheckBox.setAttribute("type", "checkbox");
     dimmableCheckBox.setAttribute("class", "checkBox");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(dimmableCheckBox);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(dimmableCheckBox);
 
     //checkbox description
     const dimmableDescription = document.createElement("a");
     dimmableDescription.innerText = "dimmable";
+    dimmableCheckBox.setAttribute("id", "dimmableCheckBox");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(dimmableDescription);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(dimmableDescription);
 
-    //checkbox birth
+    document.getElementById("dimmableCheckBox").addEventListener("click", deviceReset);  
+
+    //dimmable checkbox birth
     const checkBox = document.createElement("INPUT");
     checkBox.setAttribute("type", "checkbox");
     checkBox.setAttribute("class", "checkBox");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(checkBox);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(checkBox);
 
     //checkbox description
     const checkBoxLabel = document.createElement("a");
     checkBoxLabel.innerText = "inverted";
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(checkBoxLabel);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(checkBoxLabel);
 
     // on boot description
     const onBootLabel = document.createElement("a");
     onBootLabel.innerText = "on start";
     onBootLabel.setAttribute("class", "checkBox");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(onBootLabel);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(onBootLabel);
     
     // drop down
     const onBootDropDown = document.createElement("select");
@@ -375,28 +404,28 @@ function updateModeIO10(event) {
     onBootDropDown.setAttribute("class", "dropDown");
     onBootDropDown.setAttribute("id", "onBootDropDown");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(onBootDropDown); 
+    document.getElementById("SettingsDiv"+IOnr).appendChild(onBootDropDown); 
 
     //create test label
     const testLabel = document.createElement("a");
     testLabel.innerText = "test";
     testLabel.setAttribute("class", "");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(testLabel);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(testLabel);
 
     //create on button
     const onButton = document.createElement("button");
     onButton.innerText = "on";
     onButton.setAttribute("class", "button");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(onButton);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(onButton);
 
     //create off button
     const offButton = document.createElement("button");
     offButton.innerText = "off";
     offButton.setAttribute("class", "button");
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(offButton);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(offButton);
     
     //add things to dropbox
     let elmts = ["on", "off",];
@@ -418,20 +447,34 @@ function updateModeIO10(event) {
     brightnessSlider.setAttribute("class", "slider");
 
     // Append the "checkbox" node to the list:
-    document.getElementById("switchSettingsDiv").appendChild(brightnessSlider);
+    document.getElementById("SettingsDiv"+IOnr).appendChild(brightnessSlider);
     
   }
 
   
 
-  if(event.target.value == "disabled"){
-    document.getElementById("titleIO10").style.color = "rgba(204, 204, 204, 0.349)";
-    document.getElementById("unusedPlaceholder").innerHTML = "unused";   
+  if(mode == "disabled"){
+    document.getElementById("title"+IOnr).style.color = "rgba(204, 204, 204, 0.349)";
+    //document.getElementById("unusedPlaceholder").innerHTML = "unused";   
 
   }
- 
-  //webserial.sendSerial("setModeIO16:"+event.target.value+";");
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function connect(event) {
 
