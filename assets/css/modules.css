@@ -142,11 +142,6 @@ body {
     float: left;
 }
 
-
-.post1:hover{
-    background-color: #b889ff23;
-}
-
 .title{
     font-size: 180%;
     margin: 0 0 0 0.7%;
@@ -312,7 +307,7 @@ body {
     margin: 0 -0.7% 0px -0.7%;
     padding: 0 0.7% 0 0.7%
     position: absolute;
-    background-image: linear-gradient(#b889ff, #161616);
+    background-image: linear-gradient(#ff9f6b , #161616);
 }
 
 .iot-gradient{
