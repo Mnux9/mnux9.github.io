@@ -269,9 +269,8 @@ body {
     margin: 0 -0.7% 0px -0.7%;
     padding: 0 0.7% 0 0.7%
     position: absolute;
-    background-image: linear-gradient(#8100c7, #161616);
+    background-image: linear-gradient(#b889ff, #161616);
 }
-
 .iot-gradient{
     margin: 0 -0.7% 0px -0.7%;
     padding: 0 0.7% 0 0.7%
