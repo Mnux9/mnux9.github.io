@@ -359,6 +359,16 @@ details > summary {
     color: white;
 }
 
+
+.layered-image {
+    background: linear-gradient(to right, transparent, mistyrose), url("../../assets/images/mailbox-sensor/mailbox-thumb.jpg");
+    margin-right: 0.7%;
+    margin-bottom: 0.7%;
+    width: 25%;
+    float: left;
+    border-radius: 5px;
+  } 
+
 @media screen and (max-width: 897px) {
     .ar-title{
         font-size: 220%;
