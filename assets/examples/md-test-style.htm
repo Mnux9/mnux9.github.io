@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mailbox Sensor</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/post.css">
+	</link>
+	<link rel="shortcut icon" type="image/x-icon" href="../ini.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+</head>
+
+
+<body>
+    <!--top menu-->
+    <div class="gradient">
+        <div class="header">
+
+            <a class="mname" style="margin: 0 1% 0 1%; color: white; font-weight: bold; text-decoration: underline;" href="https://mnux.xyz">mnux</a>
+            <a class="soc" href="https://github.com/Mnux9">GitHub</a>
+            <a style="margin: 0 1% 0 0%; color: white; font-size: 170%; font-weight: bold; float: right; text-decoration: underline;" >en</a>
+            <a style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right;" >/</a>
+            <a style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right; text-decoration: none;" href="../posts/uI2Cbackpack-CS.htm">cs</a>
+            
+
+        </div>
+
+            <a class="description">Welcome to Mnux's website. This is my personal blog about stuff.</a>
+    </div>
+
+    <div class="posts">
+
+        <div class="post1">
+            <div style="width:70%; margin:0 auto;" id="mdcontainer">
+
+            </div>
+            
+        </div>
+        
+
+    </div>
+
+
+    <div class="tags">
+        <a class="title">Silly badges :3</a> <br>
+        <img alt="Open source" class="badge" src="../assets/badges/minecraft.png" />
+        <img alt="Arch" class="badge" src="../assets/badges/arch.gif" />
+        <img alt="Firefox" class="badge" src="../assets/badges/firefox3.gif" />
+        <img alt="bob" class="badge" src="../assets/badges/bob.gif" />
+    </div>
+
+</body>
+
+
+<script>
+    function getQuery(key) {
+        var query = window.location.search.substring(1);
+        var key_values = query.split("&");
+        var params = {};
+        key_values.map(function (key_val) {
+            var key_val_arr = key_val.split("=");
+            params[key_val_arr[0]] = key_val_arr[1];
+        });
+        if (typeof params[key] != "undefined") {
+            return params[key];
+        }
+        return "";
+    }
+
+    window.onload = function () {
+        md = document.createElement("zero-md")
+        md.setAttribute("src", getQuery("src"))
+        md.setAttribute("no-shadow", "")
+        document.getElementById("mdcontainer").append(md)
+    }
+</script>
