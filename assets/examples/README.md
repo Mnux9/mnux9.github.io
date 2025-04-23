@@ -25,7 +25,6 @@ void loop(){
   
 }
 ```
-```
 
 - ESP Home (Home Assistant) - You can easily use it from ESP Home without any custom libraries:
 
