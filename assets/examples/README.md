@@ -45,6 +45,8 @@ void setup(){
 void loop(){
   
 }
+```
+
 ```yaml
 i2c:
   sda: 4  # GPIO4
@@ -100,9 +102,11 @@ output:
           uint8_t brightness_byte = static_cast<uint8_t>(brightness);
           // Register 0x0 is for brightness control (change according to your device)
           id(i2cdev).write_byte(0x02, brightness_byte);
+```
+
 
 ### Component choice 
-```
+
 - IO expander - i wanted to use a purpose made I2C PWM expander however i couldn't find a suitable one so in the end i decided to use a WCH general purpose MCU and write my own firmware for it.
 
 - for the mosfets i just used a few from modules i had lying on
