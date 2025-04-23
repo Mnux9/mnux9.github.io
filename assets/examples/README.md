@@ -9,26 +9,23 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 ### USAGE
 
 - ARDUINO - I made a super simple library for arduino:
+```c++
+#include <I2CPWM.h>
 
-  `\#include <I2CPWM.h>`
+//creates an expander called "myExpander"
+I2CPWM myExpander(8); // selects an expander connected on adress 8
 
-  `//creates an expander called "myExpander"`
+void setup(){
+  // to set a PWM value:
+  // myExpander.setPWM(channel, value);
+  myExpander.setPWM(1,128); // sets channel 1 to 50% duty
+}
 
-  `I2CPWM myExpander(8); // selects an expander connected on adress 8`
-
-  `void setup(){`
-
-    `// to set a PWM value:`
-
-    `// myExpander.setPWM(channel, value);`
-
-    `myExpander.setPWM(1,128); // sets channel 1 to 50% duty`
-
-  `}`
-
-  `void loop(){`
-
-  `}`
+void loop(){
+  
+}
+```
+```
 
 - ESP Home (Home Assistant) - You can easily use it from ESP Home without any custom libraries:
 
