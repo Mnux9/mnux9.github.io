@@ -47,6 +47,7 @@ void loop(){
 }
 ```
 
+
 ```yaml
 i2c:
   sda: 4  # GPIO4
@@ -57,10 +58,6 @@ i2c:
 i2c_device:
   - id: i2cdev
     address: 0x08  # Change to match your device address
-
-# Create a floating point output for brightness control
-
-
 
 # Create a light entity that uses our brightness output
 light:
