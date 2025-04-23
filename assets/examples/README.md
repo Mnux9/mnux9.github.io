@@ -5,7 +5,7 @@ g { color: Green }
 </style>
 
 
-# <w>5 channel I2C PWM switch</w>
+# <w>5 channel I2C PWM switch
 
 ### Overview
 
@@ -85,3 +85,4 @@ As always i used kicad, however this being a circuit with a lot of repeating lay
 ### Applications 
 - I connected it to a led strip light bar i and printed a magnetic mount for it so it can be mounted
 
+</w>
