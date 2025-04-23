@@ -82,7 +82,5 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 ### <w>Circuitboard layout
 As always i used kicad, however this being a circuit with a lot of repeating layout I got to utilize some of its more advanced features and plugins.
 
-### <w>Applications </w><w>
-- I connected it to a led strip light bar i and printed a magnetic mount for it so it can be mounted
-
-</w>
+### <w>Applications </w>
+- <w>I connected it to a led strip light bar i and printed a magnetic mount for it so it can be mounted</w>
