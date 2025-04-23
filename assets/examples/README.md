@@ -16,58 +16,29 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 ### USAGE
 
 - ARDUINO - I made a super simple library for arduino:
+<w>
+  `\#include <I2CPWM.h>`
 
-  `\#include <Wire.h>`
+  `//creates an expander called "myExpander"`
 
-  `int led = 9;         // the PWM pin the LED is attached to`
-
-  `int brightness = 0;  // how bright the LED is`
-
-  `int fadeAmount = 1;  // how many points to fade the LED by`
+  `I2CPWM myExpander(8); // selects an expander connected on adress 8`
 
   `void setup(){`
 
-    `Wire.begin(); // join i2c bus (address optional for master)`
+    `// to set a PWM value:`
+
+    `// myExpander.setPWM(channel, value);`
+
+    `myExpander.setPWM(1,128); // sets channel 1 to 50% duty`
 
   `}`
-
-  `int channel = 1;`
-
-  `int value = 0;`
-
-  `String ch = "CH01";`
 
   `void loop(){`
 
-    `Wire.beginTransmission(8); // transmit to device #4`
-
-    `Wire.write(channel);`
-
-    `Wire.write(brightness);`
-
-    `Wire.endTransmission();    // stop transmitting`
-
-    `Wire.beginTransmission(8); // transmit to device #4`
-
-    `Wire.write(2);`
-
-    `Wire.write(map(brightness, 0, 130, 130, 0));`
-
-    `Wire.endTransmission();    // stop transmitting`
-
-    `// change the brightness for next time through the loop:`
-
-    `brightness = brightness + fadeAmount;`
-
-    `// reverse the direction of the fading at the ends of the fade:`
-
-    `if (brightness <= 0 || brightness >= 128) {`
-
-  ​    `fadeAmount = -fadeAmount;`
-
-    `}`
+  ``  
 
   `}`
+  </w>
 
 - ESP Home (Home Assistant) - You can easily use it from ESP Home without any custom libraries:
 
