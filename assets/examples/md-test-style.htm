@@ -11,7 +11,8 @@
         rel="stylesheet">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta charset="UTF-8">
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+    <!-- Import element definition and auto-register -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
 </head>
 
 
@@ -35,7 +36,7 @@
     <div class="posts">
 
         <div class="post1">
-            <div style="width:98%; margin:0 auto; color: white;" id="mdcontainer">
+            <zero-md src="README.md"></zero-md>
 
             </div>
             
@@ -54,27 +55,3 @@
     </div>
 
 </body>
-
-
-<script>
-    function getQuery(key) {
-        var query = window.location.search.substring(1);
-        var key_values = query.split("&");
-        var params = {};
-        key_values.map(function (key_val) {
-            var key_val_arr = key_val.split("=");
-            params[key_val_arr[0]] = key_val_arr[1];
-        });
-        if (typeof params[key] != "undefined") {
-            return params[key];
-        }
-        return "";
-    }
-
-    window.onload = function () {
-        md = document.createElement("zero-md")
-        md.setAttribute("src", "README.md")
-        md.setAttribute("no-shadow", "")
-        document.getElementById("mdcontainer").append(md)
-    }
-</script>
