@@ -36,7 +36,14 @@
     <div class="posts">
 
         <div class="post1">
-            <zero-md src="README.md"></zero-md>
+            <zero-md src="https://example.com/markdown.md">
+                <!-- Wrap `style` tags inside `template` -->
+                <template data-append>
+                  <style>
+                    p { color: red; }
+                  </style>
+                </template>
+              </zero-md>
 
             </div>
             

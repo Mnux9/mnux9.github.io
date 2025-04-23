@@ -35,10 +35,7 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 
   `void loop(){`
 
-  ``  
-
   `}`
-  
 
 - ESP Home (Home Assistant) - You can easily use it from ESP Home without any custom libraries:
 
