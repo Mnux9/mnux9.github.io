@@ -1,10 +1,3 @@
-<style>
-w { color: White }
-o { color: Orange }
-g { color: Green }
-</style>
-
-
 # 5 channel I2C PWM switch
 
 ### Overview
