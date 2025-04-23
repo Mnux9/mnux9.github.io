@@ -6,7 +6,7 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 
 
 ### Usage
-- ARDUINO - I made a super simple library for arduino:
+- Arduino - I made a super simple library for arduino:
 
 ```c++
 #include <I2CPWM.h>
