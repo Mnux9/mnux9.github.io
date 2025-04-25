@@ -2,7 +2,7 @@
 
 <img src="../assets/images/garlics.jpeg"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 10px; width:90%" />
 
 
 ### Overview
