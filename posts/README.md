@@ -5,6 +5,8 @@
      style="float: left; margin-right: 10px; width:100%" />
 
 
+
+<br>
 ### Overview
 This board connects over a the two wire I2C bus and provides a 5 PWM low side switches. This can be handy if you are running low on GPIO (eg. ESP8266) or just want a simple solution.
 
