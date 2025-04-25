@@ -1,5 +1,8 @@
 # 5 channel I2C PWM switch
 
+![alt text](../images/garlics.jpeg "Title")
+
+
 ### Overview
 This board connects over a the two wire I2C bus and provides a 5 PWM low side switches. This can be handy if you are running low on GPIO (eg. ESP8266) or just want a simple solution.
 
@@ -58,7 +61,6 @@ light:
     # Optional: Set default transition length for smooth brightness changes
 
 
-
 #I2C switch CHANNEL 1    
 output:
   - platform: template
@@ -68,9 +70,7 @@ output:
       - lambda: |-
           float brightness = state * 255.0;  // Convert 0.0-1.0 to 0-255
           uint8_t brightness_byte = static_cast<uint8_t>(brightness);
-          // Register 0x01 is for brightness control (change according to your device)
           id(i2cdev).write_byte(0x01, brightness_byte);
-
 #I2C switch CHANNEL 2    
   - platform: template
     id: I2Cchannel2
@@ -79,7 +79,6 @@ output:
       - lambda: |-
           float brightness = state * 255.0;  // Convert 0.0-1.0 to 0-255
           uint8_t brightness_byte = static_cast<uint8_t>(brightness);
-          // Register 0x0 is for brightness control (change according to your device)
           id(i2cdev).write_byte(0x02, brightness_byte);
 ```
 
