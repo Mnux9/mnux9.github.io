@@ -1,8 +1,8 @@
 # 5 channel I2C PWM switch
 
-<img src="../assets/images/garlics.jpeg"
+<img src="../assets/images/I2C PWM/IMG_1530.jpg"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px; width:90%" />
+     style="float: left; margin-right: 10px; width:100%" />
 
 
 ### Overview
