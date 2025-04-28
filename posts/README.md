@@ -1,14 +1,13 @@
 # 5 channel I2C PWM switch
-
 <img src="../assets/images/I2C PWM/IMG_1627.jpg"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px; width:100%" /><br>
+     style="float: left; margin-right: 10px; width:100%" />
 
 
 
 
 ### Overview
-This board connects over a the two wire I2C bus and provides a 5 PWM low side switches. This can be handy if you are running low on GPIO (eg. ESP8266) or just want a simple solution.<br>
+This board connects over a the two wire I2C bus and provides a 5 PWM low side switches. This can be handy if you are running low on GPIO (eg. ESP8266) or just want a simple solution.
 
 
 
@@ -51,15 +50,11 @@ i2c_device:
 # Create a light entity that uses our brightness output
 light:
   - platform: monochromatic
-    name: "I2C Brightness Light1"
+    name: "channel 1"
     output: I2Cchannel1
 
-    
-    # Optional: Set default transition length for smooth brightness changes
-    default_transition_length: 1s
-
   - platform: monochromatic
-    name: "I2C Brightness Light2"
+    name: "channel 2"
     output: I2Cchannel2
     
     # Optional: Set default transition length for smooth brightness changes
@@ -89,14 +84,26 @@ output:
 
 ### Component choice 
 
-- IO expander - i wanted to use a purpose made I2C PWM expander however i couldn't find a suitable one so in the end i decided to use a WCH general purpose MCU and write my own firmware for it.
+- MCU - I wanted to use a purpose made I2C PWM expander however i couldn't find a suitable one so in the end i decided to use a WCH general purpose MCU and write my own firmware for it. It is a really cheap mcu and comes in a simple to solder package so i choose it even tho i have never used it before.
 
 - for the mosfets i just used a few from modules i had lying on
 
-  
+### Firmware
+- I used the openwch core for arduino IDE and made a simple firmware. On start it check for the adress jumpers and starts an i2c with the approiate address. After that it just waits for i2c traffic which trigers a function that interperts the messages and sets the PWM outputs.
+- A big problem with my first time trying to program a WCH chip was that i had no idea there were multiple kinds of programmers. The one i bought was just a WCH-Link, however for the CH32v003 i need a WCH-Link*E*. Oh well I ordered the right one and just developed the code on an UNO in the mean time.
 
 ### Circuitboard layout
 As always i used kicad, however this being a circuit with a lot of repeating layout I got to utilize some of its more advanced features and plugins.
 
-### Applications 
-- I connected it to a led strip light bar i and printed a magnetic mount for it so it can be mounted</w>
+### Mistakes
+- This was my first time I used this microcontroller I expected there to be a few mistakes and ofc, on channels 2 and 4 i used a non PWM pins.
+- For some reason I also swapped the SCL and SDA... lol
+- While testing what component values to use and probing arround, i noticed there is no voltage on the output + terminals (which there should be because the switching is done through the negative). Turns out i reversed the silkscreen on the input.
+
+### Applications
+- I setup a second revision of my universal IOT board (now the IOT friend :3) on a top of my rack and connected this expander to it.
+- Discovering that my Prusa 3D printer has support in home assistant i setup a little light for it which i setup to blink once a print finishes.
+
+### Conclusion
+- As somebody who always used pre-made libraries for i2c devices it was very fun to learn how it works and make my own library.
+- In the end im pretty rly happy with the device.
