@@ -86,7 +86,9 @@ output:
 
 - MCU - I wanted to use a purpose made I2C PWM expander however i couldn't find a suitable one so in the end i decided to use a WCH general purpose MCU and write my own firmware for it. It is a really cheap mcu and comes in a simple to solder package so i choose it even tho i have never used it before.
 
-- I used the D4814
+- I used the D4814 mosfets which are cheap on ali.
+
+- For the optocouplers i used a THT version because they have a smaller footprint than their SMD counterparts.
 
 ### Firmware
 - I used the openwch core for arduino IDE and made a simple firmware. On start it check for the adress jumpers and starts an i2c with the approiate address. After that it just waits for i2c traffic which trigers a function that interperts the messages and sets the PWM outputs.
