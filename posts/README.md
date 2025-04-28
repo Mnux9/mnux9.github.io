@@ -13,7 +13,7 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 
 
 ### Usage
-- Arduino - I made a super simple library for arduino:
+- Arduino - I made a super simple library for arduino: [Download](https://github.com/Mnux9/i2c-PWM-expander/tree/main/I2C-PWM-FIRMWARE)
 
 ```c++
 //include the I2C PWM library you can download from mnux.xyz
@@ -109,3 +109,8 @@ As always i used kicad, however this being a circuit with a lot of repeating lay
 ### Conclusion
 - As somebody who always used pre-made libraries for i2c devices it was very fun to learn how it works and make my own library.
 - In the end im pretty rly happy with the device.
+
+
+### offtopic (blog update)
+I have made this blog post into a mark down file which just embeds in HTML instead of just writing it in HTML like i used to. Sadly it kindof reminds me of the style how chat bots write (or one of my teachers exams who uses AI to make them).
+So i wanted to say that I dont use any generative AI.
