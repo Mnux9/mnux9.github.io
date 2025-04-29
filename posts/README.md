@@ -106,6 +106,16 @@ As always i used kicad, however this being a circuit with a lot of repeating lay
 - I setup a second revision of my universal IOT board (now the IOT friend :3) on a top of my rack and connected this expander to it.
 - Discovering that my Prusa 3D printer has support in home assistant i setup a little light for it which can blink once a print finishes.
 
+
+<img src="../assets/images/I2C PWM/IMG_1687.jpeg"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px; width:49%" />
+
+<img src="../assets/images/I2C PWM/IMG_1687.jpeg"
+     alt="Markdown Monster icon"
+     style="float: left; margin-left: 10px; width:49%" />
+
+
 ### Conclusion
 - As somebody who always used pre-made libraries for i2c devices it was very fun to learn how it works and make my own library.
 - In the end im pretty rly happy with the device.
