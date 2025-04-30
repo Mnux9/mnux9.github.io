@@ -109,11 +109,11 @@ As always i used kicad, however this being a circuit with a lot of repeating lay
 
 <img src="../assets/images/I2C PWM/IMG_19062.jpg"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px; width:49%" />
+     style="float: left; margin-right: 10px; width:45%" />
 
 <img src="../assets/images/I2C PWM/IMG_1679.jpeg"
      alt="Markdown Monster icon"
-     style="float: left; margin-left: 10px; width:49%" />
+     style="float: left; margin-left: 10px; width:45%" />
 
 
 ### Conclusion
