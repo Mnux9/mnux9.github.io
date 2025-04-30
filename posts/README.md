@@ -1,7 +1,8 @@
 # 5 channel I2C PWM switch
 <img src="../assets/images/I2C PWM/IMG_1627.jpg"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px; width:100%" />
+     style="float: left; margin-right: 10px; width:100%" /><br>
+
 
 ***
 
@@ -86,7 +87,7 @@ output:
 
 - MCU - I wanted to use a purpose made I2C PWM expander however i couldn't find a suitable one so in the end i decided to use a WCH general purpose MCU and write my own firmware for it. It is a really cheap mcu and comes in a simple to solder package so i choose it even tho i have never used it before.
 
-- I used the D4814 mosfets which are cheap on ali.
+- Mosfets- D4814 mosfets which are cheap on ali.
 
 - For the optocouplers i used a THT version because they have a smaller footprint than their SMD counterparts.
 
@@ -117,8 +118,7 @@ As always i used kicad, however this being a circuit with a lot of repeating lay
 
 
 ### Conclusion
-Even tho the end device isnt really that interesting i thought it was still worth it making a blog post about it because of all the little techniques used that i never used in any other project.
-- As somebody who always used pre-made libraries for i2c devices it was very fun to learn how it works and make my own library.
+Even tho the end device isnt really that interesting i thought it was still worth it making a blog post about it because of all the little techniques used that i never used in any other project. And for me, somebody who always used pre-made libraries for i2c devices it was very fun to learn how it works and make my own library.
 
 
 
