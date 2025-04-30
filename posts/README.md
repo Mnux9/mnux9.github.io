@@ -92,7 +92,7 @@ output:
 - For the optocouplers i used a THT version because they have a smaller footprint than their SMD counterparts.
 
 ### Firmware
-- I used the openwch core for arduino IDE and made a simple firmware. On start it check for the address jumpers and starts an i2c with the appropriate address. After that it just waits for i2c traffic which triggers a function that interprets the messages and sets PWM outputs.
+- I used the openwch core for arduino IDE and made a simple firmware. On start it check for the address jumpers and starts an i2c with the appropriate address. After that it just waits for i2c traffic which triggers a function that interprets the messages and sets PWM outputs. [Firmware download](https://github.com/Mnux9/i2c-PWM-expander/tree/main/I2C-PWM-FIRMWARE)
 - A big problem with my first time trying to program a WCH chip was that i had no idea there were multiple kinds of programmers. The one i bought was just a WCH-Link, however for the CH32v003 i need a WCH-Link*E*. Oh well I ordered the right one and just developed the code on an UNO in the mean time.
 
 ### Circuitboard layout

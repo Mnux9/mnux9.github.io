@@ -5,35 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>gltf-viewer demo</title>
+    <title>gltf-viewer demo</title>k
 
-    <script src="https://avgp.github.io/gltf-viewer/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
-    <link rel="import" href="https://avgp.github.io/gltf-viewer/bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="https://avgp.github.io/gltf-viewer/bower_components/iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="https://avgp.github.io/gltf-viewer/gltf-viewer.html">
-
-    <style is="custom-style" include="demo-pages-shared-styles">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     </style>
 </head>
 
 <body>
-    <div class="vertical-section-container centered">
-        <h3>Load a glTF model</h3>
-        <p>Loads a glTF model from the URL given as the <code>src</code> attribute and displays it.</p>
-        <p>By default the viewer will take the size of the surrounding container and does not allow the user to move the camera or zoom.</p>
-
-
-
-
-        <h3>Enabling camera controls</h3>
-        <p>
-            The viewer allows users to orbit around (drag) and zoom (scroll or pinch) on the object
-            as well as move it around (right click) when the <code>interactive</code> property is present.
-        </p>
-        <p>This behaviour can also be set dynamically by calling <code>document.querySelector('gltf-viewer').interactive = true // or false</code></p>
+    <model-viewer src="iot-mos.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="NeilArmstrong.webp" shadow-intensity="1">
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button">
+            View in your space
+        </button>
+        <div id="ar-prompt">
+            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+        </div>
+    </model-viewer>
     
-    </div>
 </body>
 
 </html>
