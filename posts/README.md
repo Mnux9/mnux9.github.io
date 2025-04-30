@@ -91,7 +91,7 @@ output:
 - For the optocouplers i used a THT version because they have a smaller footprint than their SMD counterparts.
 
 ### Firmware
-- I used the openwch core for arduino IDE and made a simple firmware. On start it check for the adress jumpers and starts an i2c with the approiate address. After that it just waits for i2c traffic which trigers a function that interperts the messages and sets the PWM outputs.
+- I used the openwch core for arduino IDE and made a simple firmware. On start it check for the address jumpers and starts an i2c with the appropriate address. After that it just waits for i2c traffic which triggers a function that interprets the messages and sets PWM outputs.
 - A big problem with my first time trying to program a WCH chip was that i had no idea there were multiple kinds of programmers. The one i bought was just a WCH-Link, however for the CH32v003 i need a WCH-Link*E*. Oh well I ordered the right one and just developed the code on an UNO in the mean time.
 
 ### Circuitboard layout
@@ -100,25 +100,26 @@ As always i used kicad, however this being a circuit with a lot of repeating lay
 ### Mistakes
 - This was my first time I used this microcontroller I expected there to be a few mistakes and ofc, on channels 2 and 4 i used a non PWM pins.
 - For some reason I also swapped the SCL and SDA... lol
-- While testing what component values to use and probing arround, i noticed there is no voltage on the output + terminals (which there should be because the switching is done through the negative). Turns out i reversed the silkscreen on the input.
+- While testing what component values to use and probing around, i noticed there is no voltage on the output + terminals (which there should be because the switching is done through the negative). Turns out i reversed the silkscreen on the input.
 
-### Applications
-- I setup a second revision of my universal IOT board (now the IOT friend :3) on a top of my rack and connected this expander to it.
+### Usecase
+- I setup a second revision of my universal IOT board (now the IOT friend :3) with ESPHome on a top of my rack and connected this expander to it.
 - Discovering that my Prusa 3D printer has support in home assistant i setup a little light for it which can blink once a print finishes.
 
 
-<img src="../assets/images/I2C PWM/IMG_1687.jpeg"
+<img src="../assets/images/I2C PWM/IMG_19062.jpg"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px; width:49%" />
 
-<img src="../assets/images/I2C PWM/IMG_1687.jpeg"
+<img src="../assets/images/I2C PWM/IMG_1679.jpeg"
      alt="Markdown Monster icon"
      style="float: left; margin-left: 10px; width:49%" />
 
 
 ### Conclusion
+Even tho the end device isnt really that interesting i thought it was still worth it making a blog post about it because of all the little techniques used that i never used in any other project.
 - As somebody who always used pre-made libraries for i2c devices it was very fun to learn how it works and make my own library.
-- In the end im pretty rly happy with the device.
+
 
 
 ### offtopic (blog update)
