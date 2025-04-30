@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>gltf-viewer demo</title>
+
+    <script src="https://avgp.github.io/gltf-viewer/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="https://avgp.github.io/gltf-viewer/bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="https://avgp.github.io/gltf-viewer/bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="https://avgp.github.io/gltf-viewer/gltf-viewer.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+</head>
+
+<body>
+    <div class="vertical-section-container centered">
+        <h3>Load a glTF model</h3>
+        <p>Loads a glTF model from the URL given as the <code>src</code> attribute and displays it.</p>
+        <p>By default the viewer will take the size of the surrounding container and does not allow the user to move the camera or zoom.</p>
+
+
+
+
+        <h3>Enabling camera controls</h3>
+        <p>
+            The viewer allows users to orbit around (drag) and zoom (scroll or pinch) on the object
+            as well as move it around (right click) when the <code>interactive</code> property is present.
+        </p>
+        <p>This behaviour can also be set dynamically by calling <code>document.querySelector('gltf-viewer').interactive = true // or false</code></p>
+        <demo-snippet>
+          <template>
+            <gltf-viewer width="300" height="300" interactive src="../images/duck2.gltf"></gltf-viewer>
+          </template>
+        </demo-snippet>
+        <gltf-viewer width="300" height="300" interactive src="../images/I2C PWM/iot-mos.gltf"></gltf-viewer>
+
+    </div>
+</body>
+
+</html>

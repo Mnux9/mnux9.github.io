@@ -3,7 +3,7 @@
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px; width:100%" />
 
-
+***
 
 
 ### Overview
@@ -20,7 +20,7 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 #include <I2CPWM.h>
 
 //creates an expander called "myExpander"
-I2CPWM myExpander(8); // selects an expander connected on adress 8
+I2CPWM myExpander(8); // selects an expander connected on address 8
 
 void setup(){
   // to set a PWM value:
@@ -113,7 +113,7 @@ As always i used kicad, however this being a circuit with a lot of repeating lay
 
 <img src="../assets/images/I2C PWM/IMG_1679.jpeg"
      alt="Markdown Monster icon"
-     style="float: left; width:45%" />
+     style="float: left; width:45%" /><br>
 
 
 ### Conclusion
