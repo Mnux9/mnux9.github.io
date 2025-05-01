@@ -10,7 +10,7 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 
 
 ### Usage
-- Arduino - I made a super simple library for arduino: [Download](https://github.com/Mnux9/i2c-PWM-expander/tree/main/I2C-PWM-FIRMWARE)
+- **Arduino** - I made a super simple library for arduino: [Download](https://github.com/Mnux9/i2c-PWM-expander/tree/main/I2C-PWM-FIRMWARE)
 
 ```c++
 //include the I2C PWM library you can download from mnux.xyz
@@ -31,7 +31,7 @@ void loop(){
 ```
 
 
-- ESP Home (Home Assistant) - You can easily use it from ESP Home without any custom libraries:
+- **ESP Home** (Home Assistant) - You can easily use it from ESP Home without any custom libraries:
 
 ```yaml
 i2c:
@@ -81,9 +81,9 @@ output:
 ***
 ### Component choice 
 
-- MCU - I wanted to use a purpose made I2C PWM expander however i couldn't find a suitable one so in the end i decided to use a WCH general purpose MCU and write my own firmware for it. It is a really cheap mcu and comes in a simple to solder package so i choose it even tho i have never used it before.
+- **MCU** - I wanted to use a purpose made I2C PWM expander however i couldn't find a suitable one so in the end i decided to use a WCH general purpose MCU and write my own firmware for it. It is a really cheap mcu and comes in a simple to solder package so i choose it even tho i have never used it before.
 
-- Mosfets- D4814 mosfets which are cheap on ali.
+- **Mosfets** - D4814 mosfets which are cheap on ali.
 
 - For the optocouplers i used a THT version because they have a smaller footprint than their SMD counterparts.
 
