@@ -10,7 +10,7 @@ This board connects over a the two wire I2C bus and provides a 5 PWM low side sw
 
 
 ### Usage
-- **Arduino** - I made a super simple library for arduino: [Download](https://github.com/Mnux9/i2c-PWM-expander/tree/main/I2C-PWM-FIRMWARE)
+- **Arduino** - I made a super simple library for arduino: <a href="https://github.com/Mnux9/i2c-PWM-expander/tree/main/I2CPWM" style="color :blue;">Download</a>
 
 ```c++
 //include the I2C PWM library you can download from mnux.xyz
