@@ -15,7 +15,7 @@ For start I added a 3000mAh battery, it will last around 5 days transmitting eve
      style="float: left; margin-bottom:10px; margin-right: 10px; width:100%" />
 
 ### Temperature, humidity and pressure
-Im starting with just a few small sensos i had on my desk. I found an AHT-20 for temp. and humidity and BMP-280 for pressure and temp.
+Im starting with just a few small sensors i had on my desk. I found an AHT-20 for temp. and humidity and BMP-280 for pressure and temp.
 
 <img src="images/IMG_2378.jpg"
      alt="Markdown Monster icon"
