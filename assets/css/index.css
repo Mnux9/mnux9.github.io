@@ -401,7 +401,7 @@ details > summary {
 
 @media screen and (max-width: 897px) {
     .ar-title{
-        font-size: 220%;
+        font-size: 150%;
 
     }
 
@@ -432,7 +432,7 @@ details > summary {
         font-weight: bold;
     }
     .p1-txt{
-        font-size: 150%;
+        font-size: 120%;
     }
     .p1-txt-feature{
         font-size: 150%;
@@ -446,7 +446,7 @@ details > summary {
     }
     .post1{
         border: 3px solid rgba(204, 204, 204, 0.473);
-        
+        margin-bottom: 2%;
         width: 97%;
     } 
     .description-bold{
