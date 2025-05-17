@@ -429,6 +429,25 @@ details > summary {
         font-size: 160%;
     }
 
+    .posts{
+
+        margin: auto;
+      width: 98%;
+      padding: 10px;
+    
+    }
+    
+
+    
+    .post1{
+        margin: 0% 0.7% 0.7% 0%;
+        padding: 0.3% 0.7% 0.7% 0.7%;
+        border: 3px solid rgba(204, 204, 204, 0.473);
+        border-radius: 10px;
+    
+        float: left;
+    }
+
 }
 
 @media screen and (min-width: 897px) {
