@@ -406,7 +406,8 @@ details > summary {
     }
 
     .description{
-        font-size: 150%;
+        font-size: 100%;
+        padding-left: 0.7%;
     }   
 
     .tags{
