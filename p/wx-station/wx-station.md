@@ -12,7 +12,7 @@ For start I added a 3000mAh battery, when transmitting every 45 seconds it will 
 
 <img src="images/taken-apart.jpg"
      alt="Markdown Monster icon"
-     style="float: left; margin-bottom:10px; margin-right: 10px; width:100%" />
+     style="float: left; margin-bottom:10px; margin-right: 10px; width:100%; padding-bottom: 4%;" />
 
 ### Temperature, humidity and pressure
 Im starting with just a few small sensors i had on my desk. I found an AHT-20 for temp. and humidity and BMP-280 for pressure and temp.
@@ -23,7 +23,7 @@ Im starting with just a few small sensors i had on my desk. I found an AHT-20 fo
 
 <img src="images/IMG_2740.png"
      alt="Markdown Monster icon"
-     style="float: left; width:45%; padding-bottom:2%" /><br>
+     style="float: left; width:45%; padding-bottom:4%" /><br>
 
 
 
@@ -33,7 +33,7 @@ For powering this station with a solar panel I got a cheap CN3065 solar charger 
 
 <img src="images/power-folded-out.jpg"
      alt="Markdown Monster icon"
-     style="float: left; margin-bottom:10px; margin-right: 10px; width:100%" />
+     style="float: left; margin-bottom:10px; margin-right: 10px; width:100% ; padding-bottom: 4%" />
 
 ### Solar panel
 With the solar charger i got this 1W solar panel for which I printed a mount. So far (during the summer) it seems to be producing enough power to sustain the station indefinitely, however this might change as I start to add more sensors and the days start getting shorter.
