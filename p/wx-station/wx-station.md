@@ -15,7 +15,7 @@ For start I added a 3000mAh battery, when transmitting every 45 seconds it will 
      style="float: left; margin-bottom:10px; margin-right: 10px; width:100%; padding-bottom: 4%;" />
 
 ### Temperature, humidity and pressure
-Im starting with just a few small sensors i had on my desk. I found an AHT-20 for temp. and humidity and BMP-280 for pressure and temp.
+Im starting with just a few small sensors I had on my desk. I found an AHT-20 for temp. and humidity and BMP-280 for pressure and temp.
 
 <img src="images/IMG_2378.jpg"
      alt="Markdown Monster icon"
@@ -28,15 +28,15 @@ Im starting with just a few small sensors i had on my desk. I found an AHT-20 fo
 
 
 ### Solar charger + power monitoring
-For powering this station with a solar panel I got a cheap CN3065 solar charger module which i placed inside of the weather staion on a second
-"panel" which i can fold out. There is also a purple INA3221 power (voltage & current) monitoring module which monitors: solar, battery and electronics power.
+For powering this station with a solar panel I got a cheap CN3065 solar charger module which I placed inside of the weather staion on a second
+"panel" which I can fold out. There is also a purple INA3221 power (voltage & current) monitoring module which monitors: solar, battery and electronics power.
 
 <img src="images/power-folded-out.jpg"
      alt="Markdown Monster icon"
      style="float: left; margin-bottom:10px; margin-right: 10px; width:100% ; padding-bottom: 4%" />
 
 ### Solar panel
-With the solar charger i got this 1W solar panel for which I printed a mount. So far (during the summer) it seems to be producing enough power to sustain the station indefinitely, however this might change as I start to add more sensors and the days start getting shorter.
+With the solar charger I got this 1W solar panel for which I printed a mount. So far (during the summer) it seems to be producing enough power to sustain the station indefinitely, however this might change as I start to add more sensors and days start getting shorter.
 
 <img src="images/panel.jpg"
      alt="Markdown Monster icon"
