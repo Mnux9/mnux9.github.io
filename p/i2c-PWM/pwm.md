@@ -1,7 +1,7 @@
 # 5 channel I2C PWM switch
 <img src="../../assets/images/I2C PWM/IMG_1627.jpg"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px; width:100%" /><br>
+     style="float: left; margin-right: 10px; width:100%; padding-bottom: 2%;" /><br>
 
 ### Overview
 This board connects over a the two wire I2C bus and provides a 5 PWM low side switches. This can be handy if you are running low on GPIO (eg. ESP8266) or just want a simple solution.
