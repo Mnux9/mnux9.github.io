@@ -29,54 +29,16 @@ void loop(){
   
 }
 ```
-
+<details>
+  <summary>
+    summary
+  </summary>
+  details
+</details>
 
 - **ESP Home** (Home Assistant) - You can easily use it from ESP Home without any custom libraries:
 
-```yaml
-i2c:
-  sda: 4  # GPIO4
-  scl: 5  # GPIO5
-  scan: true
 
-# Define the I2C device
-i2c_device:
-  - id: i2cdev
-    address: 0x08  # Change to match your device address
-
-# Create a light entity that uses our brightness output
-light:
-  - platform: monochromatic
-    name: "channel 1"
-    output: I2Cchannel1
-
-  - platform: monochromatic
-    name: "channel 2"
-    output: I2Cchannel2
-    
-    # Optional: Set default transition length for smooth brightness changes
-
-
-#I2C switch CHANNEL 1    
-output:
-  - platform: template
-    id: I2Cchannel1
-    type: float
-    write_action:
-      - lambda: |-
-          float brightness = state * 255.0;  // Convert 0.0-1.0 to 0-255
-          uint8_t brightness_byte = static_cast<uint8_t>(brightness);
-          id(i2cdev).write_byte(0x01, brightness_byte);
-#I2C switch CHANNEL 2    
-  - platform: template
-    id: I2Cchannel2
-    type: float
-    write_action:
-      - lambda: |-
-          float brightness = state * 255.0;  // Convert 0.0-1.0 to 0-255
-          uint8_t brightness_byte = static_cast<uint8_t>(brightness);
-          id(i2cdev).write_byte(0x02, brightness_byte);
-```
 
 ***
 ### Component choice 
