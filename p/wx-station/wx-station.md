@@ -36,8 +36,7 @@ For powering this station with a solar panel I got a cheap CN3065 solar charger 
      style="float: left; margin-bottom:10px; margin-right: 10px; width:100% ; padding-bottom: 4%" />
 
 ### Solar panel
-With the solar charger I got this 1W solar panel for which I printed a mount. So far (during the summer) it seems to be producing enough power to sustain the station indefinitely, however this might change as I start to add more sensors and days start getting shorter.  <div style="text-align: right"> your-text-here </div>
-
+With the solar charger I got this 1W solar panel for which I printed a mount. So far (during the summer) it seems to be producing enough power to sustain the station indefinitely, however this might change as I start to add more sensors and days start getting shorter.
 
 <img src="images/panel.jpg"
      alt="Markdown Monster icon"

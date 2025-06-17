@@ -24,7 +24,7 @@ class WebSerialPort {
       return false;
     }
     // TODO: make this an option.
-    this.autoOpen = true;
+    this.autoOpen = false;
     // copy this to a global variable so that
     // connect/disconnect can access it:
     self = this;
@@ -70,7 +70,7 @@ class WebSerialPort {
       // set port settings and open it:
       // TODO: make port settings configurable
       // from calling script:
-      await this.port.open({ baudRate: 115200 });
+      await this.port.open({ baudRate: 9600 });
       
       
       
