@@ -2,15 +2,16 @@
 <html>
 
 <head>
-	<title>Lightning trigger configuration</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/post.css">
-	</link>
-	<link rel="shortcut icon" type="image/x-icon" href="../ini.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    <title>Lightning trigger configuration</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/post.css">
+    </link>
+    <link rel="shortcut icon" type="image/x-icon" href="../ini.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
     <!-- Import element definition and auto-register -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
     <meta content="5 channel I2C PWM switch" property="og:title" />
@@ -22,8 +23,36 @@
 
     <script src="webserial.js"></script>
     <script src="script.js"></script>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px solid rgba(173, 173, 173, 0.671);
+        }
 
-    
+        .tooltip .tooltiptext {
+            margin-left: 10px;
+            visibility: hidden;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 500px;
+            border: 2px solid rgba(204, 204, 204, 0.473);
+            background-color: rgba(41, 41, 41, 0.89);
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 5px ;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+
+
 </head>
 
 
@@ -32,37 +61,39 @@
     <div class="gradient">
         <div class="header">
 
-            <a class="mname" style="margin: 0 1% 0 1%; color: white; font-weight: bold; text-decoration: underline;" href="https://mnux.xyz">mnux</a>
-            <a style="margin: 0 1% 0 0%; color: white; font-size: 170%; font-weight: bold; float: right; text-decoration: underline;" >en</a>
-            <a style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right;" >/</a>
-            <a style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right; text-decoration: none;">cs</a>
-            
+            <a class="mname" style="margin: 0 1% 0 1%; color: white; font-weight: bold; text-decoration: underline;"
+                href="https://mnux.xyz">mnux</a>
+            <a
+                style="margin: 0 1% 0 0%; color: white; font-size: 170%; font-weight: bold; float: right; text-decoration: underline;">en</a>
+            <a style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right;">/</a>
+            <a
+                style="margin: 0 0% 0 0%; color: white; font-size: 170%; font-weight: bold;float: right; text-decoration: none;">cs</a>
+
 
         </div>
 
         <div class="description">
 
-            <a class="">Welcome to Mnux's website. This is my personal blog about electronics.</a>
-        </div>    </div>
+            <a class="">Lightning detector configuration page.</a>
+        </div>
+    </div>
 
     <div class="posts">
 
         <div class="post1" style="width: 100%;">
-            
+
             <section id="controls">
                 <a style="font-size: 30px">Connect through USB:</a><br><br>
                 <a style="font-size: 18px">choose device:</a>
                 <button id="portButton">open port</button>
                 <a style="float: right; font-size: 20px; color: gray;" id="connectionLabel">Disconnected</a>
-                
-                <hr class="rounded" color="gray"><br>
-                
+
+                <hr class="rounded" color="gray"> <br>
+
 
                 <a style="font-size: 30px">Trigger configuration:</a><br><br>
 
-                <a style="font-size: 18px">trigger durration: </a>
-                <input type="NUMBER" id="dim" min="0" max="255" value="200" disabled/>
-                <a style="font-size: 18px">ms  </a>   [?]<br>
+
 
                 <a style="font-size: 18px">Camera:</a>
                 <select name="modes" id="modeIO10" disabled>
@@ -85,20 +116,39 @@
                         <option value="light">Focus</option>
                         <option value="presence">Disabled</option>
                     </select>
+                    <div class="tooltip">(?)
+                        <span class="tooltiptext">Keeps the camera in focus mode at all time. This can minimize the delay.
+                        </span>
+                    </div>
                     <button style="float: right;" id="testShutterButton" disabled>TEST</button>
+                </div><br>
+
+                <a style="font-size: 18px">Trigger durration: </a>
+                <input type="NUMBER" id="dim" min="0" max="255" value="200" disabled />
+                <a style="font-size: 18px">ms </a><div class="tooltip">(?)
+                    <span class="tooltiptext">Durration for which the shutter button will be pressed. <br> (default = 10ms)
+                    </span>
+                </div><br>
+
+
+                <a style="font-size: 18px"> Keep half pressed (focus): </a>
+                <input type="checkbox" disabled />
+
+                <div class="tooltip">(?)
+                    <span class="tooltiptext">Keeps the camera in focus mode at all time. This can minimize the delay.
+                    </span>
                 </div>
 
-                
+
 
                 <hr class="rounded" color="gray"><br>
 
-                
+
                 <span id="readings">no input yet </span><br>
-                Seconds passed:<span id="seconds">no seconds yet</span><br>             
+                Seconds passed:<span id="seconds">no seconds yet</span>
+                <a style="float: right;">(?) - help</a>
 
-              </section>
 
-            
         </div>
     </div>
 </body>

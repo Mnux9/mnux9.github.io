@@ -36,23 +36,23 @@ function setup() {
 
   // span for incoming serial messages:
   timeSpan = document.getElementById("seconds");
-  
+
   webserial = new WebSerialPort();
   if (webserial) {
     webserial.on("data", serialRead);
-     // port open/close button:
-     portButton = document.getElementById("portButton");
-     portButton.addEventListener("click", openClosePort);
+    // port open/close button:
+    portButton = document.getElementById("portButton");
+    portButton.addEventListener("click", openClosePort);
 
-     testShutterButton.addEventListener("click", testShutter);  
-   }
+    testShutterButton.addEventListener("click", testShutter);
+  }
 }
 
 async function closeSerial(params) {
   await webserial.closePort();
   let buttonLabel = "Open port";
   portButton.innerHTML = buttonLabel;
-  document.getElementById("connectionLabel").style.color = "gray"; 
+  document.getElementById("connectionLabel").style.color = "gray";
   connectionLabel.innerHTML = "Disconnected";
 }
 
@@ -60,14 +60,16 @@ async function closeSerial(params) {
 async function openClosePort() {
   // label for the button will change depending on what you do:
   let buttonLabel = "Open port";
-  document.getElementById("connectionLabel").style.color = "gray"; 
+  document.getElementById("connectionLabel").style.color = "gray";
   connectionLabel.innerHTML = "Disconnected";
   heartBeatRun = 0;
   // if port is open, close it; if closed, open it:
   if (webserial.port) {
     await webserial.closePort();
-  } else {
+  }
+  else {
     await webserial.openPort();
+    connectionLabel.innerHTML = "Connecting...";
     buttonLabel = "Close port";
     webserial.sendSerial("ConnLT;"); //asking
   }
@@ -79,34 +81,34 @@ function serialRead(event) {
   readingsSpan.innerHTML = event.detail.data;
 
   //STUFF HERE HAPPENS ON SUCCESSFUL CONN
-  if (event.detail.data.startsWith("LTConn;")){ //anwser
+  if (event.detail.data.startsWith("LTConn;")) { //anwser
     connectionLabel.innerHTML = "Connected";
     heartBeatRun = 1;
     connectionStatus = 1;
     heartBeatsLost = 0;
-    document.getElementById("connectionLabel").style.color = "rgb(0, 255, 42)"; 
-    document.getElementById("testShutterButton").disabled=false;
+    document.getElementById("connectionLabel").style.color = "rgb(0, 255, 42)";
+    document.getElementById("testShutterButton").disabled = false;
   }
 
 }
 
 
 //heartbeat keeping
-const interval = setInterval(function() {
+const interval = setInterval(function () {
 
-  if (heartBeatRun==1){
-    if (connectionStatus == 1){
+  if (heartBeatRun == 1) {
+    if (connectionStatus == 1) {
       webserial.sendSerial("ConnLT;");
       connectionStatus = 0;
     }
-    else{
-      heartBeatsLost = heartBeatsLost +1;
-      console.log("hearbeat not rxd");
+    else {
+      heartBeatsLost = heartBeatsLost + 1;
+      console.log("heartbeat not rxd");
       webserial.sendSerial("ConnLT;");
     }
 
-    if (heartBeatsLost>3){
-      console.log("hearbeat LOST!!!!");
+    if (heartBeatsLost > 3) {
+      console.log("heartbeat LOST!!!!");
       heartBeatRun = 0;
       closeSerial();
     }
@@ -120,9 +122,10 @@ function readRangeInput(event) {
 }
 
 
-function testShutter(){
+function testShutter() {
   webserial.sendSerial("TriggerShutterNow;");
 }
+
 
 
 // run the setup function when all the page is loaded:

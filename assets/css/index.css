@@ -399,6 +399,12 @@ details > summary {
 
 
 
+
+.boardsDiv:hover{
+    background-color: #b889ff23;
+
+}
+
 @media screen and (max-width: 897px) {
     .ar-title{
         font-size: 150%;
