@@ -32,7 +32,7 @@ Setting the camera exposure to the shortest exposure time to capture only the cu
      alt="image"
      style="float: left; margin-right: 10px; width:100%; padding-bottom: 2%;" /><br>
 
-After I take a few images and confirm that Im getting a consistent reading i convert the binary number to decimal. Then I divide the number in deciman by 2 because the counter increments every 0.5ms.
+First, I tested my old Canon 500D. After I take a few images and confirm that Im getting a consistent reading i convert the binary number to decimal. Then I divide the number in deciman by 2 because the counter increments every 0.5ms.
 
 
 
