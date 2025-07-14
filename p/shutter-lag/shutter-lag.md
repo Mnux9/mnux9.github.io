@@ -22,7 +22,7 @@ does it take from triggering the shutter button to the start of an image acquisi
      style="float: left; margin-right: 10px; width:100%; padding-bottom: 2%;" /><br>
 
 I made a simple binary conter combined with a camera remote shutter trigger. When i press the red start button an short impulse is sent to the camera
-to start an image capture after that the red LEDs start incrementing by 0.5ms in binary.
+to start an image capture after that the red LEDs start incrementing by 0.5ms in binary. (You can guess who got their hands on a label maker during their summer job :3)
 
 Setting the camera exposure to the shortest exposure time to capture only the current state of the LEDs and turning off autofocus I can start measuring.
 
@@ -41,7 +41,8 @@ I 3D printed a white box with holes for leds and switches. The resistor for the 
 when shooting with a very fast shutter speed which we need so we can capture the fast changing state of counter. (in retrospecive i would use higher resistance 
 resistor because the LEDs get over blown when highering the exposure in gimp later to see the inactive leds) <br> I also added a switch which can
 half press the shutter button and get the camera to prepare (like focusing etc.) to take a picture.<br>
-At last I also added a mosfet switch with which i can trigger higher current loads like LED strips to simulate lightning strikes.
+I added a mosfet switch with which i can trigger higher current loads like LED strips to simulate lightning strikes.<br>
+
 
 
 
