@@ -1,6 +1,6 @@
 # 5 channel I2C PWM switch
 <img src="../assets/images/I2C PWM/IMG_1627.jpg"
-     alt="Markdown Monster icon"
+     alt="image"
      style="float: left; margin-right: 10px; width:100%" /><br>
 
 
@@ -109,11 +109,11 @@ As always i used kicad, however this being a circuit with a lot of repeating lay
 
 
 <img src="../assets/images/I2C PWM/IMG_19062.jpg"
-     alt="Markdown Monster icon"
+     alt="image"
      style="float: left; margin-left: 3%; margin-right: 3%; width:45%" />
 
 <img src="../assets/images/I2C PWM/IMG_1679.jpeg"
-     alt="Markdown Monster icon"
+     alt="image"
      style="float: left; width:45%" /><br>
 
 

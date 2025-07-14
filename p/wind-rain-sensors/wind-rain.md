@@ -1,6 +1,6 @@
 # Wind & Rain sensors boards
 <img src="images/IMG_2455.jpg"
-     alt="Markdown Monster icon"
+     alt="image"
      style="float: left; margin-right: 10px; width:100%; padding-bottom: 2%;" /><br>
 
 ### Overview
