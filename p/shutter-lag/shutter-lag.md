@@ -53,4 +53,10 @@ Imaging Resource</a> (a very indepth camera review site). Mine are about 10 ms o
 I'm running newer firmware or because this camera has a really high shutter count now. Not sure, honestly but I think it gives me a good enough orientation number. <br>
 Later, I found a description of their measuring setup
 <a href="https://www.imaging-resource.com/ARTS/TESTS/TIMING.HTM" style="color: deepSkyBlue; text-decoration: underline;text-decoration-style: dotted;">
-here</a>.
+here</a>.<br>
+
+I plan to update this article with more data and possible reason for the 10 ms mismatch.
+
+<a  style="color: grey">
+Published: 14.7. 2025</a><br>
+
