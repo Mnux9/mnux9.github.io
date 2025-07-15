@@ -19,7 +19,7 @@ it takes from triggering the shutter button to the start of image acquisition on
 I made a simple binary counter combined with a camera remote shutter trigger. When I press the red start button, a short impulse is sent to the camera
 to start an image capture. After that, the red LEDs start incrementing by 0.5 ms in binary. (You can guess who got their hands on a label maker during their summer job. :3)
 
-By setting the camera exposure to the shortest possible value to capture only the current state of the LEDs and turning off autofocus, I can start measuring.
+After setting the camera exposure to the shortest possible value to capture only the current state of the LEDs, turning off autofocus and turning off live view, I can start measuring.
 
 <img src="capture-timestamp.png"
  alt="image"
