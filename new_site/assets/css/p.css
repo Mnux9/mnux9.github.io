@@ -39,7 +39,7 @@ body {
 
 .center {
     margin: 2% auto;
-    width: 70%;
+    width: 60%;
     border-left: 1px solid #4e4e4e;
     border-right: 1px solid #4e4e4e;
     background-color: rgb(255, 255, 255);
@@ -101,6 +101,11 @@ body {
     /* remove underline */
     overflow: auto;
     /* contain floated children so the link fills the card height */
+}
+
+
+img{
+width: 50%;
 }
 
 
