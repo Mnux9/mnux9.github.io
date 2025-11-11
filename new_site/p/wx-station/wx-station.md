@@ -11,8 +11,7 @@ I choose a small weather proof box and made a mounting bracked for my new IoT Fr
 For start I added a 3000mAh battery, when transmitting every 45 seconds it will last around 5 days. Which is just enough time for my solar panel to arrive.
 
 <img src="images/taken-apart.jpg"
-     alt="image"
-     style="float: left; margin-bottom:10px; margin-right: 10px; width:100%; padding-bottom: 4%;" />
+     class="image_md" />
 
 ### Temperature, humidity and pressure
 Im starting with just a few small sensors I had on my desk. I found an AHT-20 for temp. and humidity and BMP-280 for pressure and temp.
