@@ -2,7 +2,6 @@ body {
 
     background-color: rgb(255, 255, 255);
     font-family: "source sans pro", sans-serif;
-
     background-size: 20px 20px;
     background-image: radial-gradient(circle, #0000005d 1px, rgba(115, 115, 115, 0) 1px);
 
@@ -43,7 +42,7 @@ body {
     border-left: 1px solid #4e4e4e;
     border-right: 1px solid #4e4e4e;
     background-color: rgb(255, 255, 255);
-    padding: 10px 10px 10px 10px;
+    padding: 2px 10px 10px 10px;
     box-shadow: 76px 0px 46px 0px rgb(255, 255, 255, 0.541), -76px 0px 46px 0px rgba(255, 255, 255, 0.541);
 }
 
@@ -91,6 +90,11 @@ body {
     display: block;
 }
 
+
+p {
+    margin-top: -2%;
+}
+
 /* make the whole article card clickable */
 .article-link {
     display: block;
@@ -104,8 +108,11 @@ body {
 }
 
 
-img{
-width: 50%;
+.image_md {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -126,6 +133,14 @@ width: 50%;
         margin: -10px 0 10px 0;
 
         display: block;
+    }
+
+
+    .image_md {
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .article-description {

@@ -13,7 +13,7 @@
 
 
   <div class="nav-bar">
-
+    <div class="article-div"></div>
     <a class="mnux-name" href="index.html">mnux</a>
     <div class="color-test">
       <div class="color-box"></div>
@@ -26,9 +26,8 @@
 
   <div class="center">
    <h1 id="measuring-camera-shutter-response-time">Measuring camera shutter response time</h1>
-<p align="center">
-  <img src="thumb-lag.jpg" style="width:80%" />
-</p>
+  <img src="thumb-lag.jpg" class="image_md"/>
+
 
 
 <h2 id="overview">Overview</h2>
@@ -38,14 +37,12 @@
 it takes from triggering the shutter button to the start of image acquisition on my cameras.</p>
 <h2 id="usage">Usage</h2>
 <p><img src="IMG_5165.jpg"
- alt="image"
- style="float: left; margin-right: 10px; width:100%; padding-bottom: 2%;" /><br></p>
+ class="image_md" /><br></p>
 <p>I made a simple binary counter combined with a camera remote shutter trigger. When I press the red start button, a short impulse is sent to the camera
 to start an image capture. After that, the red LEDs start incrementing by 0.5 ms in binary. (You can guess who got their hands on a label maker during their summer job. :3)</p>
 <p>After setting the camera exposure to the shortest possible value to capture only the current state of the LEDs, turning off autofocus and turning off live view, I can start measuring.</p>
 <p><img src="capture-timestamp.png"
- alt="image"
- style="float: left; margin-right: 10px; width:100%; padding-bottom: 2%;" /><br></p>
+ class="image_md" /><br></p>
 <p>First, I tested my old Canon 500D. After taking a few images and confirming that I&#39;m getting consistent readings, I convert the binary number to decimal.
 Then, I divide the decimal number by 2, because the counter increments every 0.5 ms.</p>
 <h2 id="the-counter-construction">The counter construction</h2>
@@ -55,11 +52,9 @@ resistors, because the LEDs get overblown when increasing the exposure in GIMP l
 I also added a lever switch which can half press the shutter button and get the camera to prepare (like focusing, etc.) to take a picture. <br>
 I added a MOSFET switch, with which I can trigger higher current loads like LED strips to simulate lightning strikes. <br></p>
 <p><img src="Schematic.svg"
- alt="image"
- style="float: left; margin-right: 10px; width:100%; padding-bottom: 2%;" /><br></p>
+ class="image_md" /><br></p>
 <p><img src="insides.jpg"
- alt="image"
- style="float: left; margin-right: 10px; width:100%; padding-bottom: 2%;" /><br></p>
+ class="image_md" /><br></p>
 <p>It is not the prettiest project by far, but it gets the job done. If you want to replicate or use parts of this project, you can get the firmware, schematics, and 3D files on my
 <a href="https://github.com/Mnux9/shutter-lag-counter" style="color: deepSkyBlue; text-decoration: underline;text-decoration-style: dotted;">GitHub</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
