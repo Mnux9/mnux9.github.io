@@ -1,0 +1,31 @@
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 12pt;
+  color: white;
+  line-height: normal;
+  background-color: rgb(36, 36, 36);
+}
+
+
+span {
+  position: sticky;
+  left: 250px;
+}
+
+section#explanation {
+  width: 600px;
+}
+
+section#controls {
+  padding: 20px;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+.meter {
+  width: 35%;
+  height: 50px;
+  color: black;
+}

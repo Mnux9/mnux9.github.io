@@ -1,0 +1,26 @@
+alias: New automation
+description: ""
+trigger:
+  - platform: device
+    type: turned_on
+    device_id: 247ee0d00c22744e9f23920dd8d0f651
+    entity_id: 4254d2c3876181e52345cab09fea6115
+    domain: switch
+condition: []
+action:
+  - type: turn_off
+    device_id: 247ee0d00c22744e9f23920dd8d0f651
+    entity_id: 4254d2c3876181e52345cab09fea6115
+    domain: switch
+  - delay: "00:00:06"
+  - device_id: 222954fe4c75d501a9802897ec72cf1d
+    domain: mobile_app
+    type: notify
+    data:
+      push:
+        sound: antic_ios_17.wav
+    message: >-
+      Mailbox was opened. {{ states("sensor.mail_box_mail_box_temperature")
+      }}°c, {{ states("sensor.mail_box_battery") }}V
+    title: Mailbox📬
+mode: single
