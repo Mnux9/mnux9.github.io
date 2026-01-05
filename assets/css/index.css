@@ -1,0 +1,148 @@
+body {
+
+    background-color: rgb(255, 255, 255);
+    font-family: "source sans pro", sans-serif;
+
+    background-size: 20px 20px;
+    background-image: radial-gradient(circle, #0000005d 1px, rgba(115, 115, 115, 0) 1px);
+
+}
+
+
+
+
+
+
+
+
+
+.nav-bar {
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(73, 154, 186, 1) 17%, rgba(146, 187, 204, 0.68) 79%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    align-items: center;
+}
+
+.mnux-name {
+    margin-left: 8px;
+    font-size: 220%;
+    text-decoration: none;
+    color: white;
+    line-height: 1;
+}
+
+
+
+
+
+
+
+.center {
+    margin: 2% auto;
+    width: 70%;
+    border-left: 1px solid #4e4e4e;
+    border-right: 1px solid #4e4e4e;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 10px 10px 10px;
+    box-shadow: 76px 0px 46px 0px rgb(255, 255, 255, 0.541), -76px 0px 46px 0px rgba(255, 255, 255, 0.541);
+}
+
+
+
+
+
+
+
+.article-div {
+    margin-top: 1%;
+    padding-top: 10px;
+    border-top: 1px solid #4e4e4e;
+    overflow: auto;
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 0.1%;
+    float: left;
+}
+
+.article-date {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.article-thumbnail {
+    width: 25%;
+    margin-top: 0;
+    margin-right: 10px;
+
+    float: left;
+
+}
+
+.article-description {
+    font-size: 120%;
+    overflow: visible;
+    margin-left: calc(25% + 10px);
+    display: block;
+}
+
+/* make the whole article card clickable */
+.article-link {
+    display: block;
+    /* allow the link to wrap the whole card */
+    color: inherit;
+    /* preserve text color */
+    text-decoration: none;
+    /* remove underline */
+    overflow: auto;
+    /* contain floated children so the link fills the card height */
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .center {
+        width: 90%;
+    }
+
+    .article-div {
+        border-top: 2px solid #4e4e4e;
+    }
+
+    .article-thumbnail {
+        width: 100%;
+        float: none;
+        margin: -10px 0 10px 0;
+
+        display: block;
+    }
+
+    .article-description {
+        margin-left: 0;
+    }
+
+    .article-title,
+    .article-date {
+        float: none;
+        display: block;
+    }
+
+    br {
+        display: none;
+    }
+
+
+    body {
+        background-size: 10px 10px;
+
+
+    }
+
+
+}
