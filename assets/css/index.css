@@ -103,7 +103,12 @@ body {
     /* contain floated children so the link fills the card height */
 }
 
-
+.image_md {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 @media only screen and (max-width: 600px) {
